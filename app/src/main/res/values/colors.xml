@@ -12,10 +12,13 @@
     <color name="marigold">#FFE5A737</color>
     <color name="gainsboro">#FFE7DADA</color>
     <color name="light_steel_blue">#FFA9BCD0</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="cadet_blue">#FF58A4B0</color>
+    <color name="prussian_blue">#FF002642</color>
+    <color name="chinese_violet">#FF6E5271</color>
+    <color name="charcoal">#FF373F51</color>
+    <color name="raisin_black">#FF1B1B1E</color>
+    <color name="white_gainsboro">#FFFBF9F9</color>
+    <color name="light_grey">#FFC4C4C4</color>
 
 
 
