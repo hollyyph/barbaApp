@@ -29,10 +29,11 @@ public class ConfirmOrder extends AppCompatActivity {
         }
 
         TextView salonNameText = (TextView) findViewById(R.id.ConfirmOrder_salonName);
-        salonNameText.setText(prevIntent.getStringExtra(OrderStub.SALON_NAME));
+        salonNameText.setText(prevIntent.getStringExtra(ReserveHome.SALON_NAME));
 
         TextView dateTimeText = (TextView) findViewById(R.id.ConfirmOrder_dateTime);
-        dateTimeText.setText(prevIntent.getStringExtra(OrderStub.DATE_TIME));
+        dateTimeText.setText(prevIntent.getStringExtra(CreateOrder.DATE_TIME));
+//        dateTimeText.setText("22 March 2021 23:05");
 
         String notesString = prevIntent.getStringExtra(ConfirmOrder.ORDER_NOTES);
         if (notesString != null && !notesString.isEmpty()) {
@@ -43,17 +44,41 @@ public class ConfirmOrder extends AppCompatActivity {
         TextView products = (TextView) findViewById(R.id.ConfirmOrder_products);
         TextView prices = (TextView) findViewById(R.id.ConfirmOrder_prices);
 
-        ArrayList<String> pnames = prevIntent.getStringArrayListExtra(OrderStub.PRODUCT_NAME);
-        ArrayList<Integer> pcount = prevIntent.getIntegerArrayListExtra(OrderStub.PRODUCT_COUNT);
+        ArrayList<String> pnames = prevIntent.getStringArrayListExtra(CreateOrder.PRODUCT_NAME);
+        ArrayList<Integer> pcount = prevIntent.getIntegerArrayListExtra(CreateOrder.PRODUCT_COUNT);
 
         String productsString = "";
         String pricesString = "";
-        for (int i=0; i <= pnames.size() - 1; i++) {
-            productsString = productsString + pnames.get(i) + "\n";
-            pricesString = pricesString + pcount.get(i).toString() + "\n";
+        Integer quantity1 = 0;
+        Integer quantity2 = 0;
+        Integer quantity3 = 0;
+
+        if (pcount.get(0) > 0) {
+            quantity1 = pcount.get(0) * 30000;
+            pricesString = pricesString + quantity1.toString() + "\n";
+            productsString = productsString + pnames.get(0) + "\n";
         }
+
+        if (pcount.get(1) > 0) {
+            quantity2 = pcount.get(1) * 80000;
+            pricesString = pricesString + quantity2.toString() + "\n";
+            productsString = productsString + pnames.get(1) + "\n";
+        }
+
+        if (pcount.get(2) > 0) {
+            quantity3 = pcount.get(2) * 100000;
+            pricesString = pricesString + quantity3.toString() + "\n";
+            productsString = productsString + pnames.get(2) + "\n";
+        }
+
+
+
         productsString = productsString.substring(0, productsString.length() - 1);
         pricesString = pricesString.substring(0, pricesString.length() - 1);
+
+        Integer tp = quantity1 + quantity2 + quantity3;
+        TextView totalPrice = (TextView) findViewById(R.id.ConfirmOrder_totalPriceValue);
+        totalPrice.setText(tp.toString());
 
         products.setText(productsString);
         prices.setText(pricesString);

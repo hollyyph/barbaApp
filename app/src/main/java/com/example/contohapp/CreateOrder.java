@@ -13,6 +13,7 @@ import java.util.List;
 public class CreateOrder extends AppCompatActivity {
     public static final String PRODUCT_NAME = "com.example.contohapp.pname";
     public static final String PRODUCT_COUNT = "com.example.contohapp.pcount";
+    public static final String DATE_TIME = "com.example.contohapp.dtime";
 
     private Integer product1Count = 0;
     private Integer product2Count = 0;
@@ -75,29 +76,30 @@ public class CreateOrder extends AppCompatActivity {
     }
 
     public void createOrder(View view) {
-        Intent intent = new Intent(this, ReserveHome.class);
+        Intent intent = new Intent(this, ConfirmOrder.class);
 
         intent.putExtras(prevIntent);
 //        intent.putExtra(DATE_TIME, datetimeInput.getText().toString());
 
         List<Integer> pcounts = new ArrayList<Integer>();
-        if (product1Count == 0) {
+//        if (product1Count == 0) {
             pcounts.add(product1Count);
-        }
-        if (product2Count == 0) {
+//        }
+//        if (product2Count == 0) {
             pcounts.add(product2Count);
-        }
-        if (product3Count == 0) {
+//        }
+//        if (product3Count == 0) {
             pcounts.add(product3Count);
-        }
+//        }
 
         List<String> pnames = new ArrayList<String>();
-        pnames.add("L’Oreal Hair Treatment - 90 Minutes");
-        pnames.add("Ginseng Hair Treatment - 90 Minutes");
-        pnames.add("Hair and Foot Treatment - 60 Minutes");
+        pnames.add("L’Oreal Hair Treatment");
+        pnames.add("Ginseng Hair Treatment");
+        pnames.add("Hair and Foot Treatment");
 
         intent.putStringArrayListExtra (PRODUCT_NAME, (ArrayList<String>) pnames);
         intent.putIntegerArrayListExtra (PRODUCT_COUNT, (ArrayList<Integer>) pcounts);
+        intent.putExtra(DATE_TIME, "22 March 2021 23:05");
 
         startActivity(intent);
     }

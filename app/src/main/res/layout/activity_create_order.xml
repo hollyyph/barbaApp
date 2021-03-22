@@ -24,8 +24,11 @@
                 android:layout_marginStart="64dp"
                 android:layout_marginLeft="64dp"
                 android:layout_marginTop="32dp"
-                android:text="Joey Pecoraro"
+                android:fontFamily="@font/biryani"
 
+                android:text="Joey Pecoraro"
+                android:textColor="@color/black"
+                android:typeface="normal"
                 app:layout_constraintStart_toStartOf="@+id/CreateOrder_reviewTitle"
                 app:layout_constraintTop_toBottomOf="@+id/CreateOrder_reviewTitle" />
 
@@ -49,11 +52,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:layout_marginBottom="32dp"
+                android:onClick="createOrder"
                 android:text="@string/order"
                 app:iconTint="@color/claret"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/CreateOrder_dateTimeButton"
-                tools:layout_editor_absoluteX="147dp"
                 tools:ignore="MissingConstraints" />
 
             <Button
@@ -172,7 +177,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
+                android:fontFamily="@font/biryani"
                 android:text="Review"
+                android:textColor="@color/black"
+                android:typeface="normal"
                 app:layout_constraintStart_toStartOf="@+id/CreateOrder_totalPrice"
                 app:layout_constraintTop_toBottomOf="@+id/CreateOrder_divider2" />
 
@@ -311,8 +319,11 @@
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                android:fontFamily="@font/biryani"
                 android:text="Tempatnya nyaman banget dan wajib ke sini tiap bulan"
+                android:textColor="@color/black"
                 android:textSize="10sp"
+                android:typeface="normal"
                 app:layout_constraintStart_toStartOf="@+id/CreateOrder_userName"
                 app:layout_constraintTop_toBottomOf="@+id/CreateOrder_userName" />
 
@@ -321,7 +332,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:fontFamily="@font/biryani"
                 android:text="view all"
+                android:textColor="@color/claret"
+                android:typeface="normal"
                 app:layout_constraintEnd_toEndOf="@+id/CreateOrder_reviewContent"
                 app:layout_constraintTop_toBottomOf="@+id/CreateOrder_reviewContent" />
 
@@ -329,7 +343,10 @@
                 android:id="@+id/CreateOrder_dateTimeTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/biryani"
                 android:text="Date and Time"
+                android:textColor="@color/black"
+                android:typeface="normal"
                 app:layout_constraintBaseline_toBaselineOf="@+id/CreateOrder_dateTimeButton"
                 app:layout_constraintStart_toStartOf="@+id/CreateOrder_reviewTitle" />
 
