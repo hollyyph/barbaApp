@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateOrder">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="183dp"
+        tools:layout_editor_absoluteY="168dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/CreateOrder_dateTimeButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:text="Button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/CreateOrder_divider3" />
+
+            <Button
+                android:id="@+id/CreateOrder_orderButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="32dp"
+                android:text="Order"
+                app:iconTint="@color/claret"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/CreateOrder_dateTimeButton"
+                tools:layout_editor_absoluteX="147dp" />
+
+            <Button
+                android:id="@+id/CreateOrder_increaseButton1"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:onClick="increaseProduct1Count"
+                android:text="-"
+                app:layout_constraintBottom_toBottomOf="@+id/CreateOrder_packageName1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/CreateOrder_packageName1" />
+
+            <Button
+                android:id="@+id/CreateOrder_decreaseButton1"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:onClick="decreaseProduct1Count"
+                android:text="-"
+                app:layout_constraintBottom_toBottomOf="@+id/CreateOrder_productCount1"
+                app:layout_constraintEnd_toStartOf="@+id/CreateOrder_productCount1"
+                app:layout_constraintTop_toTopOf="@+id/CreateOrder_productCount1" />
+
+            <Button
+                android:id="@+id/CreateOrder_increaseButton2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:onClick="increaseProduct2Count"
+                android:text="+"
+                app:layout_constraintBottom_toBottomOf="@+id/CreateOrder_packageName2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/CreateOrder_packageName2" />
+
+            <Button
+                android:id="@+id/CreateOrder_decreaseButton2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:onClick="decreaseProduct2Count"
+                android:text="-"
+                app:layout_constraintBottom_toBottomOf="@+id/CreateOrder_productCount2"
+                app:layout_constraintEnd_toStartOf="@+id/CreateOrder_productCount2"
+                app:layout_constraintTop_toTopOf="@+id/CreateOrder_productCount2" />
+
+            <Button
+                android:id="@+id/CreateOrder_increaseButton3"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:onClick="increaseProduct3Count"
+                android:text="+"
+                app:layout_constraintBottom_toBottomOf="@+id/CreateOrder_packageName3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/CreateOrder_packageName3" />
+
+            <Button
+                android:id="@+id/CreateOrder_decreaseButton3"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:onClick="decreaseProduct3Count"
+                android:text="-"
+                app:layout_constraintBottom_toBottomOf="@+id/CreateOrder_productCount3"
+                app:layout_constraintEnd_toStartOf="@+id/CreateOrder_productCount3"
+                app:layout_constraintTop_toTopOf="@+id/CreateOrder_productCount3" />
+
+            <TextView
+                android:id="@+id/CreateOrder_salonName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="240dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:fontFamily="@font/biryani"
+                android:gravity="right"
+                android:textColor="@color/white"
+                android:typeface="normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/CreateOrder_catalogueTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="32dp"
+                android:fontFamily="@font/biryani"
+                android:text="Hairstyle Catalogue"
+                android:textColor="@color/black"
+                android:typeface="normal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/CreateOrder_salonName" />
+
+            <TextView
+                android:id="@+id/CreateOrder_viewAllCat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/biryani"
+                android:text="View All"
+                android:textColor="@color/claret"
+                android:typeface="normal"
+                app:layout_constraintBaseline_toBaselineOf="@+id/CreateOrder_catalogueTitle"
+                app:layout_constraintEnd_toEndOf="@+id/CreateOrder_salonName" />
+
+            <TextView
+                android:id="@+id/CreateOrder_reviewTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Review"
+                app:layout_constraintStart_toStartOf="@+id/CreateOrder_totalPrice"
+                app:layout_constraintTop_toBottomOf="@+id/CreateOrder_divider2" />
+
+            <TextView
+                android:id="@+id/CreateOrder_packageTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:fontFamily="@font/biryani"
+                android:text="Package"
+                android:textColor="@color/black"
+                android:typeface="normal"
+                app:layout_constraintStart_toStartOf="@+id/CreateOrder_catalogueTitle"
+                app:layout_constraintTop_toBottomOf="@+id/CreateOrder_divider1" />
+
+            <TextView
+                android:id="@+id/CreateOrder_packageName1"
+                android:layout_width="225"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/biryani"
+                android:text="L’Oreal Hair Treatment - 90 Minutes"
+                android:textColor="@color/black"
+                android:typeface="normal"
+                app:layout_constraintStart_toStartOf="@+id/CreateOrder_packageTitle"
+                app:layout_constraintTop_toBottomOf="@+id/CreateOrder_packageTitle" />
+
+            <TextView
+                android:id="@+id/CreateOrder_packagePrice1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/biryani"
+                android:text="Rp30.000"
+                android:textColor="@color/claret"
+                android:typeface="normal"
+                app:layout_constraintStart_toStartOf="@+id/CreateOrder_packageName1"
+                app:layout_constraintTop_toBottomOf="@+id/CreateOrder_packageName1" />
+
+            <TextView
+                android:id="@+id/CreateOrder_packageDesc1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:text="This treatment makes hair smoother, nourishes hair to the roots, and reduces hair loss"
+                android:textSize="8sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/CreateOrder_packagePrice1"
+                app:layout_constraintTop_toBottomOf="@+id/CreateOrder_packagePrice1" />
+
+            <TextView
+                android:id="@+id/CreateOrder_packageName2"
+                android:layout_width="225"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/biryani"
+                android:text="Ginseng Hair Treatment - 90 Minutes"
+                android:textColor="@color/black"
+                android:typeface="normal"
+                app:layout_constraintStart_toStartOf="@+id/CreateOrder_packageDesc1"
+                app:layout_constraintTop_toBottomOf="@+id/CreateOrder_packageDesc1" />
+
+            <TextView
+                android:id="@+id/CreateOrder_packageName3"
+                android:layout_width="225"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/biryani"
+                android:text="Hair and Foot Treatment - 60 Minutes"
+                android:textColor="@color/black"
+                android:typeface="normal"
+                app:layout_constraintStart_toStartOf="@+id/CreateOrder_packageName2"
+                app:layout_constraintTop_toBottomOf="@+id/CreateOrder_packagePrice2" />
+
+            <TextView
+                android:id="@+id/CreateOrder_packagePrice2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/biryani"
+                android:text="Rp80.000"
+                android:textColor="@color/claret"
+                android:typeface="normal"
+                app:layout_constraintStart_toStartOf="@+id/CreateOrder_packageName2"
+                app:layout_constraintTop_toBottomOf="@+id/CreateOrder_packageName2" />
+
+            <TextView
+                android:id="@+id/CreateOrder_packagePrice3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/biryani"
+                android:text="Rp100.000"
+                android:textColor="@color/claret"
+                android:typeface="normal"
+                app:layout_constraintStart_toStartOf="@+id/CreateOrder_packageName3"
+                app:layout_constraintTop_toBottomOf="@+id/CreateOrder_packageName3" />
+
+            <TextView
+                android:id="@+id/CreateOrder_totalPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/biryani"
+                android:text="Total Price"
+                android:textColor="@color/black"
+                android:typeface="normal"
+                app:layout_constraintStart_toStartOf="@+id/CreateOrder_packagePrice3"
+                app:layout_constraintTop_toBottomOf="@+id/CreateOrder_packagePrice3" />
+
+            <TextView
+                android:id="@+id/CreateOrder_totalPriceVal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:fontFamily="@font/biryani"
+                android:textColor="@color/black"
+                android:typeface="normal"
+                app:layout_constraintBaseline_toBaselineOf="@+id/CreateOrder_totalPrice"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/CreateOrder_userName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="64dp"
+                android:layout_marginLeft="64dp"
+                android:layout_marginTop="32dp"
+                android:text="Joey Pecoraro"
+                app:layout_constraintStart_toStartOf="@+id/CreateOrder_reviewTitle"
+                app:layout_constraintTop_toBottomOf="@+id/CreateOrder_reviewTitle" />
+
+            <TextView
+                android:id="@+id/CreateOrder_reviewContent"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Tempatnya nyaman banget dan wajib ke sini tiap bulan"
+                android:textSize="10sp"
+                app:layout_constraintStart_toStartOf="@+id/CreateOrder_userName"
+                app:layout_constraintTop_toBottomOf="@+id/CreateOrder_userName" />
+
+            <TextView
+                android:id="@+id/CreateOrder_viewAll2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="view all"
+                app:layout_constraintEnd_toEndOf="@+id/CreateOrder_reviewContent"
+                app:layout_constraintTop_toBottomOf="@+id/CreateOrder_reviewContent" />
+
+            <TextView
+                android:id="@+id/CreateOrder_dateTimeTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date and Time"
+                app:layout_constraintBaseline_toBaselineOf="@+id/CreateOrder_dateTimeButton"
+                app:layout_constraintStart_toStartOf="@+id/CreateOrder_reviewTitle" />
+
+            <TextView
+                android:id="@+id/CreateOrder_productCount1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                app:layout_constraintBottom_toBottomOf="@+id/CreateOrder_increaseButton1"
+                app:layout_constraintEnd_toStartOf="@+id/CreateOrder_increaseButton1"
+                app:layout_constraintTop_toTopOf="@+id/CreateOrder_increaseButton1" />
+
+            <TextView
+                android:id="@+id/CreateOrder_productCount2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                app:layout_constraintBottom_toBottomOf="@+id/CreateOrder_increaseButton2"
+                app:layout_constraintEnd_toStartOf="@+id/CreateOrder_increaseButton2"
+                app:layout_constraintTop_toTopOf="@+id/CreateOrder_increaseButton2" />
+
+
+            <TextView
+                android:id="@+id/CreateOrder_productCount3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                app:layout_constraintBottom_toBottomOf="@+id/CreateOrder_increaseButton3"
+                app:layout_constraintEnd_toStartOf="@+id/CreateOrder_increaseButton3"
+                app:layout_constraintTop_toTopOf="@+id/CreateOrder_increaseButton3" />
+
+            <View
+                android:id="@+id/CreateOrder_divider1"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="104dp"
+                android:alpha="0.5"
+                android:background="@color/light_grey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/CreateOrder_viewAllCat" />
+
+            <View
+                android:id="@+id/CreateOrder_divider2"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="24dp"
+                android:alpha="0.5"
+                android:background="@color/light_grey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/CreateOrder_totalPrice" />
+
+            <View
+                android:id="@+id/CreateOrder_divider3"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="32dp"
+                android:alpha="0.5"
+                android:background="@color/light_grey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/CreateOrder_viewAll2" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

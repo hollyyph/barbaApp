@@ -1,9 +1,11 @@
 package com.example.contohapp.ui.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -13,6 +15,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.contohapp.R;
+import com.example.contohapp.ReserveHome;
 
 public class HomeFragment extends Fragment {
 
@@ -53,4 +56,17 @@ public class HomeFragment extends Fragment {
         });
         return root;
     }
+
+
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        Button reserveButton = (Button) getView().findViewById(R.id.reserve_button);
+        reserveButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(getActivity(), ReserveHome.class);
+                startActivity(intent);
+            }
+        });
+    }
+
 }
