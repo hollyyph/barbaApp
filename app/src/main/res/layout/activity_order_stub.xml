@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OrderStub">
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="48dp"
+        android:onClick="createOrder"
+        android:text="Create Order"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="229dp" />
+
+    <Button
+        android:id="@+id/increaseButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:onClick="increaseProductCount"
+        android:text="+"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/productCount"
+        app:layout_constraintTop_toBottomOf="@+id/productName" />
+
+    <Button
+        android:id="@+id/decreaseButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:onClick="decreaseProductCount"
+        android:text="-"
+        app:layout_constraintEnd_toStartOf="@+id/productCount"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/productName" />
+
+    <EditText
+        android:id="@+id/salonName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="48dp"
+        android:ems="10"
+        android:hint="Salon Name"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/dateTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="tanggal"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/salonName"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/salonName"
+        app:layout_constraintTop_toBottomOf="@+id/salonName" />
+
+    <TextView
+        android:id="@+id/productCount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/increaseButton"
+        app:layout_constraintEnd_toStartOf="@+id/increaseButton"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/decreaseButton" />
+
+    <EditText
+        android:id="@+id/productName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:ems="10"
+        android:hint="product name"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/productCount"
+        app:layout_constraintEnd_toEndOf="@+id/dateTime"
+        app:layout_constraintStart_toStartOf="@+id/dateTime"
+        app:layout_constraintTop_toBottomOf="@+id/dateTime"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/addProduct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:onClick="addProduct"
+        android:text="Add"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/productCount" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

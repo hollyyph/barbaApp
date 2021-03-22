@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PaymentMethod">
+
+    <TextView
+        android:id="@+id/PaymentMethod_title"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:text="Choose Payment Method"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/PaymentMethod_gopay"
+        android:layout_width="62dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginLeft="104dp"
+        android:layout_marginTop="48dp"
+        android:clickable="true"
+        android:text="GoPay"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PaymentMethod_title" />
+
+    <TextView
+        android:id="@+id/PaymentMethod_ovo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:clickable="true"
+        android:text="OVO"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/PaymentMethod_gopay"
+        app:layout_constraintTop_toBottomOf="@+id/PaymentMethod_gopay" />
+
+    <TextView
+        android:id="@+id/PaymentMethod_linkaja"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:clickable="true"
+        android:text="LinkAja"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/PaymentMethod_ovo"
+        app:layout_constraintTop_toBottomOf="@+id/PaymentMethod_ovo" />
+
+    <TextView
+        android:id="@+id/PaymentMethod_dana"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:clickable="true"
+        android:text="DANA"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/PaymentMethod_linkaja"
+        app:layout_constraintTop_toBottomOf="@+id/PaymentMethod_linkaja" />
+
+    <TextView
+        android:id="@+id/PaymentMethod_cash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:clickable="true"
+        android:text="Cash (OTS)"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/PaymentMethod_dana"
+        app:layout_constraintTop_toBottomOf="@+id/PaymentMethod_dana" />
+
+    <Button
+        android:id="@+id/PaymentMethod_chooseButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="48dp"
+        android:onClick="setPaymentMethod"
+        android:text="Choose"
+        android:textSize="10sp"
+        app:backgroundTint="@color/claret"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    android:background="@color/light_grey"
+    <View
+        android:layout_width="411dp"
+        android:layout_height="1dp"
+        android:alpha="0.1"
+        app:layout_constraintTop_toBottomOf="@+id/PaymentMethod_title"
+        app:layout_constraintBottom_toTopOf="@+id/PaymentMethod_gopay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:layout_width="411dp"
+        android:layout_height="1dp"
+        android:alpha="0.1"
+        android:background="@color/light_grey"
+        app:layout_constraintTop_toBottomOf="@+id/PaymentMethod_gopay"
+        app:layout_constraintBottom_toTopOf="@+id/PaymentMethod_ovo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:layout_width="411dp"
+        android:layout_height="1dp"
+        android:alpha="0.1"
+        android:background="@color/light_grey"
+        app:layout_constraintTop_toBottomOf="@+id/PaymentMethod_ovo"
+        app:layout_constraintBottom_toTopOf="@+id/PaymentMethod_linkaja"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:layout_width="411dp"
+        android:layout_height="1dp"
+        android:alpha="0.1"
+        android:background="@color/light_grey"
+        app:layout_constraintTop_toBottomOf="@+id/PaymentMethod_linkaja"
+        app:layout_constraintBottom_toTopOf="@+id/PaymentMethod_dana"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:layout_width="411dp"
+        android:layout_height="1dp"
+        android:alpha="0.1"
+        android:background="@color/light_grey"
+        app:layout_constraintTop_toBottomOf="@+id/PaymentMethod_dana"
+        app:layout_constraintBottom_toTopOf="@+id/PaymentMethod_cash"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:layout_width="411dp"
+        android:layout_height="1dp"
+        android:alpha="0.1"
+        android:background="@color/light_grey"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@+id/PaymentMethod_cash"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
