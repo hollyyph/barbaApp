@@ -10,46 +10,62 @@
         android:id="@+id/ViewConfirmed_ScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="278dp"
-        tools:layout_editor_absoluteY="192dp">
+        tools:layout_editor_absoluteX="-91dp"
+        tools:layout_editor_absoluteY="38dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/linearLayout"
+            android:id="@+id/ViewConfirmed_constraintLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="@+id/ViewConfirmed_paymentMethod"
-            app:layout_constraintStart_toEndOf="@+id/ViewConfirmed_paymentMethod">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="parent">
 
             <Button
-                android:id="@+id/ViewConfirmed_confirmOrderButton"
-                android:layout_width="wrap_content"
+                android:id="@+id/ViewConfirmed_homeButton"
+                android:layout_width="125dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Confirm Order"
+                android:layout_marginTop="48dp"
+                android:layout_marginBottom="48dp"
+                android:text="Back to Home"
                 android:textSize="10sp"
-                app:backgroundTint="@color/claret"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:backgroundTint="@color/light_steel_blue"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/ViewConfirmed_chatButton"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ViewConfirmed_paymentMethod"
+                app:layout_constraintTop_toBottomOf="@+id/ViewConfirmed_paymentMethodValue"
+                app:layout_constraintVertical_bias="0.0"
                 tools:layout_conversion_absoluteHeight="48dp"
                 tools:layout_conversion_absoluteWidth="121dp" />
 
-            <EditText
+            <Button
+                android:id="@+id/ViewConfirmed_chatButton"
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:text="Chat"
+                android:textSize="10sp"
+                app:backgroundTint="@color/cadet_blue"
+                app:layout_constraintBottom_toBottomOf="@+id/ViewConfirmed_homeButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/ViewConfirmed_homeButton"
+                app:layout_constraintTop_toTopOf="@+id/ViewConfirmed_homeButton"
+                tools:layout_conversion_absoluteHeight="48dp"
+                tools:layout_conversion_absoluteWidth="121dp" />
+
+            <TextView
                 android:id="@+id/ViewConfirmed_notes"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:ems="10"
-                android:hint="Insert notes.."
                 android:inputType="textPersonName"
+                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="@+id/ViewConfirmed_salonName"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/ViewConfirmed_noteTitle"
-                app:layout_constraintTop_toBottomOf="@+id/ViewConfirmed_noteTitle"
-                tools:layout_conversion_absoluteHeight="53dp"
-                tools:layout_conversion_absoluteWidth="0dp" />
+                app:layout_constraintTop_toBottomOf="@+id/ViewConfirmed_noteTitle" />
 
             <TextView
                 android:id="@+id/ViewConfirmed_salonName"
@@ -57,11 +73,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginLeft="24dp"
-                android:layout_marginTop="48dp"
+                android:layout_marginTop="24dp"
                 android:layout_marginEnd="24dp"
                 android:layout_marginRight="24dp"
                 android:fontFamily="@font/biryani"
-                android:text="JohnnyAndrean Bintaro"
                 android:textColor="@color/black"
                 android:textSize="24sp"
                 android:typeface="normal"
@@ -75,9 +90,8 @@
                 android:id="@+id/ViewConfirmed_dateTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:fontFamily="@font/biryani"
-                android:text="Sunday, 30 Mei 2021 13.45"
                 android:textColor="@color/black"
                 android:typeface="normal"
                 app:layout_constraintStart_toStartOf="@+id/ViewConfirmed_salonName"
@@ -101,7 +115,7 @@
                 android:id="@+id/ViewConfirmed_statusValue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:text="Waiting"
                 android:textColor="@color/black"
                 android:textSize="18sp"
@@ -126,7 +140,7 @@
                 android:id="@+id/ViewConfirmed_orderNumberValue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:text="123456789123"
                 android:textColor="@color/black"
                 android:textSize="18sp"
@@ -152,7 +166,7 @@
             <TextView
                 android:id="@+id/ViewConfirmed_products"
                 android:layout_width="0dp"
-                android:layout_height="100dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginRight="16dp"
@@ -167,9 +181,8 @@
             <TextView
                 android:id="@+id/ViewConfirmed_prices"
                 android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_height="wrap_content"
                 android:gravity="right"
-                android:text="TextView"
                 android:textColor="@color/black"
                 app:layout_constraintBottom_toBottomOf="@+id/ViewConfirmed_products"
                 app:layout_constraintEnd_toEndOf="@+id/ViewConfirmed_salonName"
@@ -213,20 +226,30 @@
                 android:id="@+id/ViewConfirmed_paymentMethod"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="16dp"
                 android:gravity="center_vertical"
                 android:text="Payment Method"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="@+id/ViewConfirmed_salonName"
-                app:layout_constraintTop_toBottomOf="@+id/ViewConfirmed_totalPrice"
+                app:layout_constraintTop_toBottomOf="@id/ViewConfirmed_divider2"
                 tools:layout_conversion_absoluteHeight="22dp"
                 tools:layout_conversion_absoluteWidth="180dp" />
 
+            <TextView
+                android:id="@+id/ViewConfirmed_paymentMethodValue"
+                android:layout_width="142dp"
+                android:layout_height="33dp"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/ViewConfirmed_paymentMethod"
+                app:layout_constraintTop_toBottomOf="@+id/ViewConfirmed_paymentMethod" />
+
             <View
                 android:id="@+id/ViewConfirmed_divider1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:alpha="0.1"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:alpha="0.5"
                 android:background="@color/light_grey"
                 app:layout_constraintBottom_toTopOf="@+id/ViewConfirmed_noteTitle"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -237,14 +260,15 @@
 
             <View
                 android:id="@+id/ViewConfirmed_divider2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:alpha="0.1"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="32dp"
+                android:alpha="0.5"
                 android:background="@color/light_grey"
                 app:layout_constraintBottom_toTopOf="@+id/ViewConfirmed_paymentMethod"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ViewConfirmed_section"
+                app:layout_constraintTop_toBottomOf="@id/ViewConfirmed_totalPrice"
                 tools:layout_conversion_absoluteHeight="1dp"
                 tools:layout_conversion_absoluteWidth="411dp" />
 
@@ -256,7 +280,7 @@
                 android:layout_marginBottom="16dp"
                 android:alpha="0.1"
                 android:background="@color/light_grey"
-                app:layout_constraintBottom_toTopOf="@+id/ViewConfirmed_paymentMethod"
+                app:layout_constraintBottom_toTopOf="@id/ViewConfirmed_divider2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -264,6 +288,15 @@
                 tools:layout_conversion_absoluteHeight="0dp"
                 tools:layout_conversion_absoluteWidth="0dp" />
 
+            <View
+                android:id="@+id/ViewConfirmed_totalDivider"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/black"
+                app:layout_constraintBottom_toTopOf="@+id/ViewConfirmed_totalPrice"
+                app:layout_constraintEnd_toEndOf="@+id/ViewConfirmed_prices"
+                app:layout_constraintStart_toStartOf="@+id/ViewConfirmed_products"
+                app:layout_constraintTop_toBottomOf="@+id/ViewConfirmed_products" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

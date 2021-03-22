@@ -14,7 +14,8 @@
         android:onClick="createOrder"
         android:text="Create Order"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="229dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/increaseButton"
@@ -54,6 +55,7 @@
         android:ems="10"
         android:hint="Salon Name"
         android:inputType="textPersonName"
+        android:text="JohnyAndrean"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -65,6 +67,7 @@
         android:ems="10"
         android:hint="tanggal"
         android:inputType="textPersonName"
+        android:text="22 Maret 2020 11:38"
         app:layout_constraintEnd_toEndOf="@+id/salonName"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/salonName"
@@ -78,6 +81,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
+        android:text="1"
         app:layout_constraintBaseline_toBaselineOf="@+id/increaseButton"
         app:layout_constraintEnd_toStartOf="@+id/increaseButton"
         app:layout_constraintHorizontal_bias="0.5"
@@ -92,6 +96,7 @@
         android:ems="10"
         android:hint="product name"
         android:inputType="textPersonName"
+        android:text="produk 1"
         app:layout_constraintBottom_toTopOf="@+id/productCount"
         app:layout_constraintEnd_toEndOf="@+id/dateTime"
         app:layout_constraintStart_toStartOf="@+id/dateTime"

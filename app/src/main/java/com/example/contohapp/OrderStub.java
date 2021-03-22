@@ -23,7 +23,6 @@ public class OrderStub extends AppCompatActivity {
     private Integer productCount = 0;
     private TextView pCountElement;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

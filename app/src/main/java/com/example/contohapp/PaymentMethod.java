@@ -3,26 +3,32 @@ package com.example.contohapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
 public class PaymentMethod extends AppCompatActivity {
     public static final String PAYMENT_METHOD = "com.example.contohapp.pmethod";
-
-    private TextView gopay =  (TextView) findViewById(R.id.PaymentMethod_gopay);
-    private TextView ovo =  (TextView) findViewById(R.id.PaymentMethod_ovo);
-    private TextView linkaja =  (TextView) findViewById(R.id.PaymentMethod_linkaja);
-    private TextView dana =  (TextView) findViewById(R.id.PaymentMethod_dana);
-    private TextView cash =  (TextView) findViewById(R.id.PaymentMethod_cash);
+    private TextView gopay;
+    private TextView ovo;
+    private TextView linkaja;
+    private TextView dana;
+    private TextView cash;
     private String pmethod;
-
-    private Intent prevIntent = getIntent();
+    private Intent prevIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment_method);
+        prevIntent = getIntent();
+
+        gopay =  (TextView) findViewById(R.id.PaymentMethod_gopay);
+        ovo =  (TextView) findViewById(R.id.PaymentMethod_ovo);
+        linkaja =  (TextView) findViewById(R.id.PaymentMethod_linkaja);
+        dana =  (TextView) findViewById(R.id.PaymentMethod_dana);
+        cash =  (TextView) findViewById(R.id.PaymentMethod_cash);
 
         gopay.setOnClickListener(new View.OnClickListener() {
             @Override
