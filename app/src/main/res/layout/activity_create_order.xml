@@ -174,7 +174,7 @@
 
             <TextView
                 android:id="@+id/CreateOrder_packageName1"
-                android:layout_width="225"
+                android:layout_width="225dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/biryani"
@@ -212,7 +212,7 @@
 
             <TextView
                 android:id="@+id/CreateOrder_packageName2"
-                android:layout_width="225"
+                android:layout_width="225dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:fontFamily="@font/biryani"
@@ -224,7 +224,7 @@
 
             <TextView
                 android:id="@+id/CreateOrder_packageName3"
-                android:layout_width="225"
+                android:layout_width="225dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:fontFamily="@font/biryani"
