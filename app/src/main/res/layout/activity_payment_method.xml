@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PaymentMethod">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="194dp">
+
+        <TextView
+            android:id="@+id/PaymentMethod_title"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginBottom="24dp"
+            android:fontFamily="@font/biryani"
+            android:text="Choose Payment Method"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:typeface="normal"
+            android:visibility="visible" />
+
+        <View
+            android:id="@+id/PaymentMethod_divider3"
+            android:layout_width="411dp"
+            android:layout_height="1dp"
+            android:alpha="0.1"
+            android:background="@color/light_grey" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:orientation="horizontal"
+            android:id="@+id/layout_gopay">
+
+            <ImageView
+                android:id="@+id/gopayLogo"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginVertical="20dp"
+                android:layout_marginLeft="40dp"
+                app:srcCompat="@drawable/gopay_logo_cropped" />
+
+            <TextView
+                android:id="@+id/PaymentMethod_gopay"
+                android:layout_width="62dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="27.5dp"
+                android:layout_marginBottom="27.5dp"
+                android:clickable="true"
+                android:fontFamily="@font/biryani"
+                android:text="GoPay"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:typeface="normal" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/PaymentMethod_divider2"
+            android:layout_width="411dp"
+            android:layout_height="1dp"
+            android:alpha="0.1"
+            android:background="@color/light_grey"
+             app:layout_constraintTop_toBottomOf="@+id/layout_gopay"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:orientation="horizontal"
+            android:id="@+id/layout_ovo">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginVertical="20dp"
+                android:layout_marginLeft="40dp"
+                app:srcCompat="@drawable/ovo_logo_cropped" />
+
+            <TextView
+                android:id="@+id/PaymentMethod_ovo"
+                android:layout_width="62dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="27.5dp"
+                android:layout_marginBottom="27.5dp"
+                android:clickable="true"
+                android:fontFamily="@font/biryani"
+                android:text="OVO"
+
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:typeface="normal" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/PaymentMethod_divider4"
+            android:layout_width="411dp"
+            android:layout_height="1dp"
+            android:alpha="0.1"
+            android:background="@color/light_grey"
+            app:layout_constraintTop_toBottomOf="@+id/layout_ovo"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="76dp"
+            android:orientation="horizontal"
+            android:id="@+id/layout_dana">
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginVertical="20dp"
+                android:layout_marginLeft="40dp"
+                app:srcCompat="@drawable/dana_logo_cropped" />
+
+            <TextView
+                android:id="@+id/PaymentMethod_dana"
+                android:layout_width="62dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="27.5dp"
+                android:layout_marginBottom="27.5dp"
+                android:clickable="true"
+                android:fontFamily="@font/biryani"
+                android:text="DANA"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:typeface="normal" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/PaymentMethod_divider6"
+            android:layout_width="411dp"
+            android:layout_height="1dp"
+            android:alpha="0.1"
+            android:background="@color/light_grey"
+            app:layout_constraintTop_toBottomOf="@+id/layout_dana"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:orientation="horizontal"
+            android:id="@+id/layout_linkaja">
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginVertical="20dp"
+                android:layout_marginLeft="40dp"
+                app:srcCompat="@drawable/linkaja_logo" />
+
+            <TextView
+                android:id="@+id/PaymentMethod_linkaja"
+                android:layout_width="100dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="27.5dp"
+                android:layout_marginBottom="27.5dp"
+                android:clickable="true"
+                android:fontFamily="@font/biryani"
+                android:text="LinkAja"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:typeface="normal" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/PaymentMethod_divider5"
+            android:layout_width="411dp"
+            android:layout_height="1dp"
+            android:alpha="0.1"
+            android:background="@color/light_grey"
+            app:layout_constraintTop_toBottomOf="@+id/layout_linkaja"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:orientation="horizontal"
+            android:id="@+id/layout_cash">
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginVertical="20dp"
+                android:layout_marginLeft="40dp"
+                app:srcCompat="@drawable/cash_logo" />
+
+            <TextView
+                android:id="@+id/PaymentMethod_cash"
+                android:layout_width="100dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="27.5dp"
+                android:layout_marginBottom="27.5dp"
+                android:clickable="true"
+                android:fontFamily="@font/biryani"
+                android:text="Cash (OTS)"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:typeface="normal" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/PaymentMethod_divider1"
+            android:layout_width="411dp"
+            android:layout_height="1dp"
+            android:alpha="0.1"
+            app:layout_constraintTop_toBottomOf="@+id/layout_cash"/>  />
+
+        <Button
+            android:id="@+id/PaymentMethod_chooseButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="100dp"
+            android:layout_marginBottom="48dp"
+            android:fontFamily="@font/biryani"
+            android:onClick="setPaymentMethod"
+            android:text="Choose"
+            android:textSize="10sp"
+            android:typeface="normal"
+            app:backgroundTint="@color/claret" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
