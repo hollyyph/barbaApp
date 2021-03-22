@@ -71,26 +71,26 @@
 
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:orientation="horizontal">-->
 
-                    <ImageButton
-                        android:id="@+id/reserveButton"
-                        android:layout_width="216dp"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/reserve_button"
-                        tools:layout_editor_absoluteX="49dp"
-                        tools:layout_editor_absoluteY="179dp" />
+<!--                    <ImageButton-->
+<!--                        android:id="@+id/reserveButton"-->
+<!--                        android:layout_width="216dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:src="@drawable/reserve_button"-->
+<!--                        tools:layout_editor_absoluteX="49dp"-->
+<!--                        tools:layout_editor_absoluteY="179dp" />-->
 
-                    <ImageButton
-                        android:id="@+id/imageButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:src="@drawable/call_button" />
-                </LinearLayout>
+<!--                    <ImageButton-->
+<!--                        android:id="@+id/imageButton"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:src="@drawable/call_button" />-->
+<!--                </LinearLayout>-->
 
                 <HorizontalScrollView
                     android:layout_width="match_parent"
@@ -116,7 +116,9 @@
                             android:layout_marginLeft="40dp"
                             android:layout_marginRight="50dp"
                             android:layout_weight="1"
-                            android:text="Review 2" />
+                            android:text="Review 2"
+                            />
+
                     </LinearLayout>
                 </HorizontalScrollView>
 
@@ -126,6 +128,7 @@
                     android:layout_height="150dp"
                     android:layout_weight="1"
                     android:layout_marginHorizontal="40dp"
+                    android:background="@color/marigold"
                     android:text="Event 1" />
 
                 <Button
@@ -133,6 +136,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:layout_marginHorizontal="40dp"
+                    android:background="@color/cadet_blue"
                     android:text="Event 2" />
 
                 <Button
@@ -140,6 +144,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:layout_marginHorizontal="40dp"
+                    android:background="@color/chinese_violet"
                     android:text="Event 3" />
 
             </LinearLayout>

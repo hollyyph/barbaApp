@@ -1,4 +1,4 @@
-package com.example.contohapp.reserve;
+package com.example.contohapp.ui.reserve;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
