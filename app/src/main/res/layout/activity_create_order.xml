@@ -34,11 +34,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:layout_marginBottom="32dp"
-                android:text="Order"
+                android:text="@string/order"
                 app:iconTint="@color/claret"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/CreateOrder_dateTimeButton"
-                tools:layout_editor_absoluteX="147dp" />
+                tools:layout_editor_absoluteX="147dp"
+                tools:ignore="MissingConstraints" />
 
             <Button
                 android:id="@+id/CreateOrder_increaseButton1"
@@ -174,7 +175,7 @@
 
             <TextView
                 android:id="@+id/CreateOrder_packageName1"
-                android:layout_width="225"
+                android:layout_width="225dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/biryani"
@@ -212,7 +213,7 @@
 
             <TextView
                 android:id="@+id/CreateOrder_packageName2"
-                android:layout_width="225"
+                android:layout_width="225dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:fontFamily="@font/biryani"
@@ -224,7 +225,7 @@
 
             <TextView
                 android:id="@+id/CreateOrder_packageName3"
-                android:layout_width="225"
+                android:layout_width="225dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:fontFamily="@font/biryani"
