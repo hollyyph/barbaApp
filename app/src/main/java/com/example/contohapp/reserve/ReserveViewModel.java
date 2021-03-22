@@ -1,24 +1,17 @@
-package com.example.contohapp.ui.home;
-
-import android.view.View;
-import android.widget.Button;
+package com.example.contohapp.reserve;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class HomeViewModel extends ViewModel {
-
+public class ReserveViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public HomeViewModel() {
+    public ReserveViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is Home Fragment");
-
+        mText.setValue("This is reserve fragment");
     }
-
-
 
     public LiveData<String> getText() {
         return mText;
