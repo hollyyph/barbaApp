@@ -21,7 +21,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="48dp"
-                android:text="Button"
+                android:text="@string/barber"
+                android:fontFamily="@font/biryani"
+                android:background="@drawable/salonreservebutton"
                 app:layout_constraintEnd_toStartOf="@+id/ReserveHome_barberFilter"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
@@ -31,7 +33,9 @@
                 android:id="@+id/ReserveHome_barberFilter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Button"
+                android:text="@string/salon"
+                android:fontFamily="@font/biryani"
+                android:background="@drawable/barberreservebutton"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/ReserveHome_salonFilter"
@@ -39,8 +43,8 @@
 
             <ImageButton
                 android:id="@+id/ReserveHome_option1"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_width="300dp"
+                android:layout_height="180dp"
                 android:layout_marginStart="56dp"
                 android:layout_marginLeft="56dp"
                 android:layout_marginTop="32dp"
@@ -48,34 +52,37 @@
                 android:layout_marginRight="56dp"
                 android:layout_weight="1"
                 android:onClick="chooseOption1"
+                android:background="@drawable/salon1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ReserveHome_searchBar"
-                tools:srcCompat="@tools:sample/backgrounds/scenic" />
+                 />
 
             <ImageButton
                 android:id="@+id/ReserveHome_option2"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_width="300dp"
+                android:layout_height="180dp"
                 android:layout_marginTop="32dp"
                 android:onClick="chooseOption2"
+                android:background="@drawable/salon2"
                 app:layout_constraintEnd_toEndOf="@+id/ReserveHome_option1"
                 app:layout_constraintStart_toStartOf="@+id/ReserveHome_option1"
                 app:layout_constraintTop_toBottomOf="@+id/ReserveHome_option1"
-                tools:srcCompat="@tools:sample/backgrounds/scenic" />
+                 />
 
             <ImageButton
                 android:id="@+id/ReserveHome_option3"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_width="300dp"
+                android:layout_height="180dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginBottom="32dp"
                 android:onClick="chooseOption3"
+                android:background="@drawable/salon3"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/ReserveHome_option2"
                 app:layout_constraintStart_toStartOf="@+id/ReserveHome_option2"
                 app:layout_constraintTop_toBottomOf="@+id/ReserveHome_option2"
-                tools:srcCompat="@tools:sample/backgrounds/scenic" />
+                 />
 
             <SearchView
                 android:id="@+id/ReserveHome_searchBar"

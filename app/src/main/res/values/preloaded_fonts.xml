@@ -2,6 +2,6 @@
 <resources>
     <array name="preloaded_fonts" translatable="false">
         <item>@font/biryani</item>
-        <item>@font/bebas</item>
+<!--        <item>@font/bebas</item>-->
     </array>
 </resources>
