@@ -75,7 +75,7 @@ public class CreateOrder extends AppCompatActivity {
     }
 
     public void createOrder(View view) {
-        Intent intent = new Intent(this, ConfirmOrder.class);
+        Intent intent = new Intent(this, ReserveHome.class);
 
         intent.putExtras(prevIntent);
 //        intent.putExtra(DATE_TIME, datetimeInput.getText().toString());
