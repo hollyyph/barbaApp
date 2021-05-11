@@ -21,6 +21,8 @@ public class CreateOrder extends AppCompatActivity {
     private ArrayList<TextView> productCountTextView;
     private Intent prevIntent;
 
+    private TextView datetimeShow;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,6 +62,9 @@ public class CreateOrder extends AppCompatActivity {
         for (int i = 0; i <= productsCount.size() - 1; i++) {
             productCountTextView.get(i).setText(productsCount.get(i + 1).toString());
         }
+
+        datetimeShow = findViewById(R.id.CreateOrder_dateTimeShow);
+        datetimeShow.setText("28 Maret 2021 23:23");
 
         prevIntent = getIntent();
         String message = prevIntent.getStringExtra(ReserveHome.SALON_NAME);
@@ -130,5 +135,10 @@ public class CreateOrder extends AppCompatActivity {
             productsCount.put(idx + 1, pc);
             productCountTextView.get(idx).setText(pc.toString());
         }
+    }
+
+    public void openCalendar(View view){
+        //opendialog ke Datetime
+
     }
 }

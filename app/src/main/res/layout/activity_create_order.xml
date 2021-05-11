@@ -31,6 +31,18 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/CreateOrder_divider3" />
 
+             <TextView
+                android:id="@+id/CreateOrder_dateTimeShow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+
+                android:gravity="right"
+                app:layout_constraintBottom_toTopOf="@id/CreateOrder_orderButton"
+                app:layout_constraintTop_toBottomOf="@id/CreateOrder_dateTimeButton"
+                app:layout_constraintVertical_bias="0.0"
+                tools:layout_editor_absoluteX="246dp" />
+
             <Button
                 android:id="@+id/CreateOrder_orderButton"
                 android:layout_width="wrap_content"
