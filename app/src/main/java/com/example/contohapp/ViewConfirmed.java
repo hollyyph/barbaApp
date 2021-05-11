@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 
 public class ViewConfirmed extends AppCompatActivity {
 
@@ -19,64 +19,44 @@ public class ViewConfirmed extends AppCompatActivity {
 
         String pMethodString = intent.getStringExtra(PaymentMethod.PAYMENT_METHOD);
         if (pMethodString != null && !pMethodString.isEmpty()) {
-            TextView paymentMethod = (TextView) findViewById(R.id.ViewConfirmed_paymentMethodValue);
+            TextView paymentMethod = findViewById(R.id.ViewConfirmed_paymentMethodValue);
             paymentMethod.setText(pMethodString);
         }
 
-        TextView salonNameText = (TextView) findViewById(R.id.ViewConfirmed_salonName);
+        TextView salonNameText = findViewById(R.id.ViewConfirmed_salonName);
         salonNameText.setText(intent.getStringExtra(ReserveHome.SALON_NAME));
 
-        TextView dateTimeText = (TextView) findViewById(R.id.ViewConfirmed_dateTime);
+        TextView dateTimeText = findViewById(R.id.ViewConfirmed_dateTime);
         dateTimeText.setText(intent.getStringExtra(CreateOrder.DATE_TIME));
 
-        TextView notes = (TextView) findViewById(R.id.ViewConfirmed_notes);
+        TextView notes = findViewById(R.id.ViewConfirmed_notes);
         notes.setText(intent.getStringExtra(ConfirmOrder.ORDER_NOTES));
-
-        TextView products = (TextView) findViewById(R.id.ViewConfirmed_products);
-        TextView prices = (TextView) findViewById(R.id.ViewConfirmed_prices);
-
-        ArrayList<String> pnames = intent.getStringArrayListExtra(CreateOrder.PRODUCT_NAME);
-        ArrayList<Integer> pcount = intent.getIntegerArrayListExtra(CreateOrder.PRODUCT_COUNT);
 
         String productsString = "";
         String pricesString = "";
-        Integer quantity1 = 0;
-        Integer quantity2 = 0;
-        Integer quantity3 = 0;
+        HashMap<Integer, HashMap<String, Object>> pinfo = (HashMap<Integer, HashMap<String, Object>>) intent.getSerializableExtra(CreateOrder.PRODUCT_INFO);
+        HashMap<Integer, Integer> pcount = (HashMap<Integer, Integer>) intent.getSerializableExtra(CreateOrder.PRODUCT_COUNT);
+        Integer totalPriceValue = 0;
 
-        if (pcount.get(0) > 0) {
-            quantity1 = pcount.get(0) * 30000;
-            pricesString = pricesString + quantity1.toString() + "\n";
-            productsString = productsString + pnames.get(0) + "\n";
+        for (int productId : pinfo.keySet()) {
+            if (pcount.get(productId) > 0) {
+                Integer subtotal = pcount.get(productId) * ((int) pinfo.get(productId).get("harga"));
+                totalPriceValue += subtotal;
+                pricesString = pricesString + subtotal.toString() + "\n";
+                productsString = productsString + pinfo.get(productId).get("nama") + "\n";
+            }
         }
 
-        if (pcount.get(1) > 0) {
-            quantity2 = pcount.get(1) * 80000;
-            pricesString = pricesString + quantity2.toString() + "\n";
-            productsString = productsString + pnames.get(1) + "\n";
-        }
-
-        if (pcount.get(2) > 0) {
-            quantity3 = pcount.get(2) * 100000;
-            pricesString = pricesString + quantity3.toString() + "\n";
-            productsString = productsString + pnames.get(2) + "\n";
-        }
-
-//        for (int i=0; i <= pnames.size() - 1; i++) {
-//            productsString = productsString + pnames.get(i) + "\n";
-//            pricesString = pricesString + pcount.get(i).toString() + "\n";
-//        }
-
-        Integer tp = quantity1 + quantity2 + quantity3;
-        TextView totalPrice = (TextView) findViewById(R.id.ViewConfirmed_totalPriceValue);
-        totalPrice.setText(tp.toString());
-
+        //menghapus newline terakhir
         productsString = productsString.substring(0, productsString.length() - 1);
         pricesString = pricesString.substring(0, pricesString.length() - 1);
 
+        TextView totalPrice = findViewById(R.id.ViewConfirmed_totalPriceValue);
+        TextView products = findViewById(R.id.ViewConfirmed_products);
+        TextView prices = findViewById(R.id.ViewConfirmed_prices);
+
+        totalPrice.setText(totalPriceValue.toString());
         products.setText(productsString);
         prices.setText(pricesString);
     }
-
-
 }

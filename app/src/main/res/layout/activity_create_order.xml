@@ -17,21 +17,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/CreateOrder_userName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="64dp"
-                android:layout_marginLeft="64dp"
-                android:layout_marginTop="32dp"
-                android:fontFamily="@font/biryani"
-
-                android:text="Joey Pecoraro"
-                android:textColor="@color/black"
-                android:typeface="normal"
-                app:layout_constraintStart_toStartOf="@+id/CreateOrder_reviewTitle"
-                app:layout_constraintTop_toBottomOf="@+id/CreateOrder_reviewTitle" />
-
             <Button
                 android:id="@+id/CreateOrder_dateTimeButton"
                 android:layout_width="wrap_content"
@@ -40,9 +25,9 @@
                 android:layout_marginEnd="16dp"
                 android:layout_marginRight="16dp"
                 android:backgroundTint="@color/white_gainsboro"
-                android:textSize="10dp"
                 android:text="Change"
                 android:textColor="@color/black"
+                android:textSize="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/CreateOrder_divider3" />
 
@@ -52,7 +37,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:layout_marginBottom="32dp"
-                android:onClick="createOrder"
                 android:text="@string/order"
                 app:iconTint="@color/claret"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -67,8 +51,7 @@
                 android:layout_height="40dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginRight="16dp"
-                android:onClick="increaseProduct1Count"
-                android:text="-"
+                android:text="+"
                 app:layout_constraintBottom_toBottomOf="@+id/CreateOrder_packageName1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/CreateOrder_packageName1" />
@@ -79,7 +62,6 @@
                 android:layout_height="40dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginRight="16dp"
-                android:onClick="decreaseProduct1Count"
                 android:text="-"
                 app:layout_constraintBottom_toBottomOf="@+id/CreateOrder_productCount1"
                 app:layout_constraintEnd_toStartOf="@+id/CreateOrder_productCount1"
@@ -91,7 +73,6 @@
                 android:layout_height="40dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginRight="16dp"
-                android:onClick="increaseProduct2Count"
                 android:text="+"
                 app:layout_constraintBottom_toBottomOf="@+id/CreateOrder_packageName2"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -103,7 +84,6 @@
                 android:layout_height="40dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginRight="16dp"
-                android:onClick="decreaseProduct2Count"
                 android:text="-"
                 app:layout_constraintBottom_toBottomOf="@+id/CreateOrder_productCount2"
                 app:layout_constraintEnd_toStartOf="@+id/CreateOrder_productCount2"
@@ -115,7 +95,6 @@
                 android:layout_height="40dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginRight="16dp"
-                android:onClick="increaseProduct3Count"
                 android:text="+"
                 app:layout_constraintBottom_toBottomOf="@+id/CreateOrder_packageName3"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -127,11 +106,34 @@
                 android:layout_height="40dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginRight="16dp"
-                android:onClick="decreaseProduct3Count"
                 android:text="-"
                 app:layout_constraintBottom_toBottomOf="@+id/CreateOrder_productCount3"
                 app:layout_constraintEnd_toStartOf="@+id/CreateOrder_productCount3"
                 app:layout_constraintTop_toTopOf="@+id/CreateOrder_productCount3" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="0dp"
+                android:layout_height="450dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/fotojohnnyandrean" />
+
+            <TextView
+                android:id="@+id/CreateOrder_userName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="64dp"
+                android:layout_marginLeft="64dp"
+                android:layout_marginTop="32dp"
+                android:fontFamily="@font/biryani"
+
+                android:text="Joey Pecoraro"
+                android:textColor="@color/black"
+                android:typeface="normal"
+                app:layout_constraintStart_toStartOf="@+id/CreateOrder_reviewTitle"
+                app:layout_constraintTop_toBottomOf="@+id/CreateOrder_reviewTitle" />
 
             <TextView
                 android:id="@+id/CreateOrder_salonName"
@@ -306,14 +308,6 @@
                 app:layout_constraintBaseline_toBaselineOf="@+id/CreateOrder_totalPrice"
                 app:layout_constraintEnd_toEndOf="parent" />
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="wrap_content"
-                android:layout_height="450dp"
-                app:srcCompat="@drawable/fotojohnnyandrean"
-                tools:layout_editor_absoluteX="0dp"
-                tools:layout_editor_absoluteY="4dp" />
-
             <TextView
                 android:id="@+id/CreateOrder_reviewContent"
                 android:layout_width="250dp"
@@ -417,13 +411,13 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/CreateOrder_viewAll2" />
 
-<!--            <ImageView-->
-<!--                android:id="@+id/imageView3"-->
-<!--                android:layout_width="40dp"-->
-<!--                android:layout_height="40dp"-->
-<!--                app:srcCompat="@drawable/profile_picture"-->
-<!--                tools:layout_editor_absoluteX="21dp"-->
-<!--                tools:layout_editor_absoluteY="984dp" />-->
+            <!--            <ImageView-->
+            <!--                android:id="@+id/imageView3"-->
+            <!--                android:layout_width="40dp"-->
+            <!--                android:layout_height="40dp"-->
+            <!--                app:srcCompat="@drawable/profile_picture"-->
+            <!--                tools:layout_editor_absoluteX="21dp"-->
+            <!--                tools:layout_editor_absoluteY="984dp" />-->
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
