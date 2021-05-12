@@ -1,5 +1,6 @@
 package com.example.contohapp;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -10,6 +11,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import com.example.contohapp.DateTime;
 
 public class CreateOrder extends AppCompatActivity {
     public static final String PRODUCT_INFO = "com.example.contohapp.pinfo";
@@ -137,8 +140,17 @@ public class CreateOrder extends AppCompatActivity {
         }
     }
 
-    public void openCalendar(View view){
-        //opendialog ke Datetime
+    public void openDatetime(View view, @Nullable Bundle savedInstanceState){
+        //ke Datetime
+        Button datetimeButton = (Button) findViewById(R.id.CreateOrder_dateTimeButton);
+        datetimeButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(view.getContext(), DateTime.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }

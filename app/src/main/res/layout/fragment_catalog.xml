@@ -6,17 +6,152 @@
     android:layout_height="match_parent"
     tools:context=".ui.catalog.CatalogFragment">
 
-    <TextView
-        android:id="@+id/text_catalog"
+    <ScrollView
+        android:id="@+id/Catalog_scrollview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="21dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="40dp"
+            >
+
+            <TextView
+                android:id="@+id/text_catalog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+
+                android:textSize="20sp"
+                android:text="Trends in 2021"
+                android:textColor="@color/black"
+                android:fontFamily="@font/biryani"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="12dp"
+                android:orientation="horizontal">
+                <ImageButton
+                    android:id="@+id/Catalog_button1"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:background="@drawable/catalog1"
+                    android:layout_marginHorizontal="25dp"
+                    />
+                <ImageButton
+                    android:id="@+id/Catalog_button2"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:background="@drawable/catalog2"
+                    android:layout_marginHorizontal="25dp"
+                    />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="12dp"
+                android:orientation="horizontal">
+                <ImageButton
+                    android:id="@+id/Catalog_button3"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:background="@drawable/catalog3"
+                    android:layout_marginHorizontal="25dp"
+                    />
+                <ImageButton
+                    android:id="@+id/Catalog_button4"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:background="@drawable/catalog4"
+                    android:layout_marginHorizontal="25dp"
+                    />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="12dp"
+                android:orientation="horizontal">
+                <ImageButton
+                    android:id="@+id/Catalog_button5"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:background="@drawable/catalog5"
+                    android:layout_marginHorizontal="25dp"
+                    />
+                <ImageButton
+                    android:id="@+id/Catalog_button6"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:background="@drawable/catalog6"
+                    android:layout_marginHorizontal="25dp"
+                    />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="12dp"
+                android:orientation="horizontal">
+                <ImageButton
+                    android:id="@+id/Catalog_button7"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:background="@drawable/catalog7"
+                    android:layout_marginHorizontal="25dp"
+                    />
+                <ImageButton
+                    android:id="@+id/Catalog_button8"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:background="@drawable/catalog8"
+                    android:layout_marginHorizontal="25dp"
+                    />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="12dp"
+                android:orientation="horizontal">
+                <ImageButton
+                    android:id="@+id/Catalog_button9"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:background="@drawable/catalog2"
+                    android:layout_marginHorizontal="25dp"
+                    />
+                <ImageButton
+                    android:id="@+id/Catalog_button10"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:background="@drawable/catalog1"
+                    android:layout_marginHorizontal="25dp"
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+
+
+
+
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
