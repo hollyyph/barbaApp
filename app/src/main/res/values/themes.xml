@@ -36,4 +36,11 @@
         <item name= "android:textColor">@color/white</item>
         <item name= "android:text">"Next"</item>
     </style>
+
+    <style name="EditButton">
+        <item name= "android:textColor">@color/raisin_black</item>
+        <item name= "android:text">"Edit"</item>
+        <item name="android:background">@drawable/editbtn</item>
+
+    </style>
 </resources>
