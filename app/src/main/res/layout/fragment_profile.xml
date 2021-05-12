@@ -52,6 +52,13 @@
                 android:background="@drawable/blankprofile"/>
 
 <!--            persection-->
+            <View
+                android:id="@+id/Profile_1_divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:alpha="0.5"
+                android:background="@color/light_grey"
+                app:layout_constraintTop_toTopOf="@+id/Profile_1_container" />
             <LinearLayout
                 android:id="@+id/Profile_1_container"
                 android:layout_width="match_parent"
@@ -91,15 +98,17 @@
                         android:background="@drawable/editbtn"
                         android:theme="@style/EditButton"/>
                 </RelativeLayout>
-                <View
-                    android:id="@+id/Profile_divider1"
-                    android:layout_width="0dp"
-                    android:layout_height="1dp"
-                    android:alpha="0.5"
-                    android:background="@color/light_grey"
-                    app:layout_constraintBottom_toTopOf="@+id/Profile_1_containerisi" />
+
 
             </LinearLayout>
+            <View
+                android:id="@+id/Profile_2_divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:alpha="0.5"
+                android:background="@color/light_grey"
+                app:layout_constraintTop_toTopOf="@+id/Profile_2_container" />
+
             <LinearLayout
                 android:id="@+id/Profile_2_container"
                 android:layout_width="match_parent"
@@ -139,15 +148,16 @@
                         android:background="@drawable/editbtn"
                         android:theme="@style/EditButton"/>
                 </RelativeLayout>
-                <View
-                    android:id="@+id/Profile_divider2"
-                    android:layout_width="0dp"
-                    android:layout_height="1dp"
-                    android:alpha="0.5"
-                    android:background="@color/light_grey"
-                    app:layout_constraintBottom_toTopOf="@+id/Profile_2_containerisi" />
 
             </LinearLayout>
+            <View
+                android:id="@+id/Profile_3_divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:alpha="0.5"
+                android:background="@color/light_grey"
+                app:layout_constraintTop_toTopOf="@+id/Profile_3_container" />
+
             <LinearLayout
                 android:id="@+id/Profile_3_container"
                 android:layout_width="match_parent"
@@ -187,15 +197,16 @@
                         android:background="@drawable/editbtn"
                         android:theme="@style/EditButton"/>
                 </RelativeLayout>
-                <View
-                    android:id="@+id/Profile_divider3"
-                    android:layout_width="0dp"
-                    android:layout_height="1dp"
-                    android:alpha="0.5"
-                    android:background="@color/light_grey"
-                    app:layout_constraintBottom_toTopOf="@+id/Profile_3_containerisi" />
 
             </LinearLayout>
+            <View
+                android:id="@+id/Profile_4_divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:alpha="0.5"
+                android:background="@color/light_grey"
+                app:layout_constraintTop_toTopOf="@+id/Profile_4_container" />
+
             <LinearLayout
                 android:id="@+id/Profile_4_container"
                 android:layout_width="match_parent"
@@ -235,15 +246,16 @@
                         android:background="@drawable/editbtn"
                         android:theme="@style/EditButton"/>
                 </RelativeLayout>
-                <View
-                    android:id="@+id/Profile_divider4"
-                    android:layout_width="0dp"
-                    android:layout_height="1dp"
-                    android:alpha="0.5"
-                    android:background="@color/light_grey"
-                    app:layout_constraintBottom_toTopOf="@+id/Profile_4_containerisi" />
 
             </LinearLayout>
+            <View
+                android:id="@+id/Profile_5_divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:alpha="0.5"
+                android:background="@color/light_grey"
+                app:layout_constraintTop_toTopOf="@+id/Profile_5_container" />
+
             <LinearLayout
                 android:id="@+id/Profile_5_container"
                 android:layout_width="match_parent"
@@ -278,15 +290,16 @@
                         android:background="@drawable/detailbtn"
                         android:theme="@style/EditButton"/>
                 </RelativeLayout>
-                <View
-                    android:id="@+id/Profile_divider5"
-                    android:layout_width="0dp"
-                    android:layout_height="1dp"
-                    android:alpha="0.5"
-                    android:background="@color/light_grey"
-                    app:layout_constraintBottom_toTopOf="@+id/Profile_5_containerisi" />
 
             </LinearLayout>
+            <View
+                android:id="@+id/Profile_6_divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:alpha="0.5"
+                android:background="@color/light_grey"
+                app:layout_constraintTop_toTopOf="@+id/Profile_6_container" />
+
             <LinearLayout
                 android:id="@+id/Profile_6_container"
                 android:layout_width="match_parent"
@@ -321,15 +334,16 @@
                         android:background="@drawable/detailbtn"
                         android:theme="@style/EditButton"/>
                 </RelativeLayout>
-                <View
-                    android:id="@+id/Profile_divider6"
-                    android:layout_width="0dp"
-                    android:layout_height="1dp"
-                    android:alpha="0.5"
-                    android:background="@color/light_grey"
-                    app:layout_constraintBottom_toTopOf="@+id/Profile_6_containerisi" />
 
             </LinearLayout>
+            <View
+                android:id="@+id/Profile_7_divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:alpha="0.5"
+                android:background="@color/light_grey"
+                app:layout_constraintTop_toTopOf="@+id/Profile_7_container" />
+
             <LinearLayout
                 android:id="@+id/Profile_7_container"
                 android:layout_width="match_parent"
@@ -364,15 +378,16 @@
                         android:background="@drawable/detailbtn"
                         android:theme="@style/EditButton"/>
                 </RelativeLayout>
-                <View
-                    android:id="@+id/Profile_divider7"
-                    android:layout_width="0dp"
-                    android:layout_height="1dp"
-                    android:alpha="0.5"
-                    android:background="@color/light_grey"
-                    app:layout_constraintBottom_toTopOf="@+id/Profile_7_containerisi" />
 
             </LinearLayout>
+            <View
+                android:id="@+id/Profile_8_divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:alpha="0.5"
+                android:background="@color/light_grey"
+                app:layout_constraintTop_toTopOf="@+id/Profile_8_container" />
+
             <LinearLayout
                 android:id="@+id/Profile_8_container"
                 android:layout_width="match_parent"
@@ -407,15 +422,16 @@
                         android:background="@drawable/detailbtn"
                         android:theme="@style/EditButton"/>
                 </RelativeLayout>
-                <View
-                    android:id="@+id/Profile_divider8"
-                    android:layout_width="0dp"
-                    android:layout_height="1dp"
-                    android:alpha="0.5"
-                    android:background="@color/light_grey"
-                    app:layout_constraintBottom_toTopOf="@+id/Profile_8_containerisi" />
 
             </LinearLayout>
+            <View
+                android:id="@+id/Profile_9_divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:alpha="0.5"
+                android:background="@color/light_grey"
+                app:layout_constraintTop_toTopOf="@+id/Profile_9_container" />
+
             <LinearLayout
                 android:id="@+id/Profile_9_container"
                 android:layout_width="match_parent"
