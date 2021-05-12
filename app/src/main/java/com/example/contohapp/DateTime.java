@@ -6,6 +6,9 @@ import android.view.View;
 import android.widget.CalendarView;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import java.time.*;
+import java.time.Month;
+import java.time.temporal.ChronoField;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,10 +32,12 @@ public class DateTime extends AppCompatActivity{
     protected Integer savedMinute = 0;
 
     private TextView datetime_text;
-
+    private String datetime_string;
 
     private CalendarView calendar;
     private TimePicker time;
+    private Calendar c;
+    private TextView datetime_show;
 
     private Intent prevIntent;
 
@@ -43,8 +48,16 @@ public class DateTime extends AppCompatActivity{
         prevIntent = getIntent();
 
         calendar = (CalendarView) findViewById(R.id.datetime_calendar);
+
         time = (TimePicker) findViewById(R.id.datetime_time);
+        time.setIs24HourView(true);
+        time.setCurrentHour(Calendar.getInstance().get(Calendar.HOUR_OF_DAY));
+
         datetime_text = (TextView) findViewById(R.id.datetime_text);
+
+        c = Calendar.getInstance();
+
+        datetime_show = (TextView) findViewById(R.id.CreateOrder_dateTimeShow);
 
         calendar.setOnDateChangeListener((calendar, i, i1, i2) -> {
             day = i1+1;
@@ -55,20 +68,69 @@ public class DateTime extends AppCompatActivity{
 
         });
 
-        //time picker?
+        hour = c.get(Calendar.HOUR_OF_DAY);
+        minute = c.get(Calendar.MINUTE);
 
+        //show ke layar
+        showDateTime(year, month, day, hour, minute);
 
     }
 
-    private void getDateTimeCalendar(){
-        Calendar calendar = Calendar.getInstance();
-        day = calendar.get(Calendar.DAY_OF_MONTH);
-        month = calendar.get(Calendar.MONTH);
-        year = calendar.get(Calendar.YEAR);
-        hour = calendar.get(Calendar.HOUR);
-        minute = calendar.get(Calendar.MINUTE);
+//    private void getDateTimeCalendar(){
+//        Calendar calendar = Calendar.getInstance();
+//        day = calendar.get(Calendar.DAY_OF_MONTH);
+//        month = calendar.get(Calendar.MONTH);
+//        year = calendar.get(Calendar.YEAR);
+//        hour = calendar.get(Calendar.HOUR_OF_DAY);
+//        minute = calendar.get(Calendar.MINUTE);
+//
+//    }
 
-
+    public void showDateTime(int year, int month, int day, int hour, int minute){
+        String mname = "";
+        switch(month){
+            case 1:
+                mname = "January";
+                break;
+            case 2:
+                mname = "February";
+                break;
+            case 3:
+                mname = "March";
+                break;
+            case 4:
+                mname = "April";
+                break;
+            case 5:
+                mname = "May";
+                break;
+            case 6:
+                mname = "June";
+                break;
+            case 7:
+                mname = "July";
+                break;
+            case 8:
+                mname = "August";
+                break;
+            case 9:
+                mname = "September";
+                break;
+            case 10:
+                mname = "October";
+                break;
+            case 11:
+                mname = "November";
+                break;
+            case 12:
+                mname = "December";
+                break;
+            default:
+                mname = "";
+        }
+        String s = "";
+        s = String.format("%i %s %i %i:%i", day, mname, year, hour, minute);
+        datetime_text.setText(s);
     }
 
     public void setDatetime(View view) {

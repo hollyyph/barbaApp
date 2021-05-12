@@ -16,7 +16,7 @@ public class CatalogChoose1 extends AppCompatActivity {
         article.setText("You heard it here first, the shag is here to stay. “They are still hanging about”, says KMS Guest Artist, Emily Olsson from shibui Melbourne. “But I think for the reason that they are so versatile, you can soften them out or go almost mullet-like depending on your desired look. “ Case and point? Rihanna just got a mullet.\n" +
                 "Image: @coiffeurstory");
         TextView title = (TextView) findViewById(R.id.Catalog_Choose1_title);
-        article.setText("Shags, shags, shags");
+        title.setText("Shags, shags, shags");
         ImageView image = (ImageView) findViewById(R.id.Catalog_Choose1_img);
         image.setBackgroundResource(R.drawable.catalog1_title);
         findViewById(R.id.Catalog_Choose1_button).setOnClickListener(new View.OnClickListener() {

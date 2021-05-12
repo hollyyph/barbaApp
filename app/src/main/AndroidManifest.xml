@@ -11,6 +11,9 @@
         android:theme="@style/Theme.ContohApp"
         android:usesCleartextTraffic="true">
         <activity android:name=".DummyActivity" />
+        <activity android:name=".CatalogChoose1" />
+        <activity android:name=".CatalogChoose2" />
+        <activity android:name=".DateTime" />
         <activity android:name=".CreateOrder" />
         <activity android:name=".ReserveHome" />
         <activity android:name=".ViewConfirmed" />
