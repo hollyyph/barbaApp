@@ -15,12 +15,16 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.contohapp.R;
 
+import org.w3c.dom.Text;
+
+import java.util.HashMap;
 import java.util.Map;
 
 public class ActivityFragment extends Fragment {
 
     private ActivityViewModel activityViewModel;
-    private
+    private LinearLayout l;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -35,11 +39,19 @@ public class ActivityFragment extends Fragment {
             }
         });
 
-        LinearLayout l = (LinearLayout) root.findViewById(R.id.loop_layout);
+        l = (LinearLayout) root.findViewById(R.id.loop_layout);
+
+        for (int i = 1; i< 5; i++){
+            String angka = "Ke- "+ i;
+            LinearLayout lv = (LinearLayout) root.findViewById(R.id.loop_layout_activity);
+
+            l.addView(lv);
+        }
 
 
+        // kasi code buat loop bikin layout
 
         return root;
     }
-    public void loadActivity()
+
 }
