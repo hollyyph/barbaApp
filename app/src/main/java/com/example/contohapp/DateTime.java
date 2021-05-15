@@ -3,6 +3,7 @@ package com.example.contohapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.TextView;
 import android.widget.TimePicker;
@@ -64,8 +65,6 @@ public class DateTime extends AppCompatActivity{
             month= i2;
             year=i;
 
-//            String date = (i1+1) + "/" + i2 + "/" + i;
-
         });
 
         hour = c.get(Calendar.HOUR_OF_DAY);
@@ -73,6 +72,17 @@ public class DateTime extends AppCompatActivity{
 
         //show ke layar
         showDateTime(year, month, day, hour, minute);
+
+//        Button setButton = (Button) findViewById(R.id.datetime_setbutton);
+//        setButton.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View v)
+//            {
+////                Intent intent = new Intent(view.getContext(), DateTime.class);
+//                Intent intent = new Intent(DateTime.this, CreateOrder.class);
+//                startActivity(intent);
+//            }
+//        });
 
     }
 
@@ -129,14 +139,14 @@ public class DateTime extends AppCompatActivity{
                 mname = "";
         }
         String s = "";
-        s = String.format("%i %s %i %i:%i", day, mname, year, hour, minute);
+        s = String.format("%d %s %d %d:%d", day, mname, year, hour, minute);
         datetime_text.setText(s);
     }
 
     public void setDatetime(View view) {
         Intent intent = new Intent(this, CreateOrder.class);
         intent.putExtras(this.prevIntent);
-//        intent.putExtra(DATE_TIME, this.dtime);
+        intent.putExtra(DATE_TIME, this.dtime);
         startActivity(intent);
     }
 

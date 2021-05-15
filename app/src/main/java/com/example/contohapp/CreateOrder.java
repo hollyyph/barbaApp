@@ -101,6 +101,8 @@ public class CreateOrder extends AppCompatActivity {
 
         }
 
+        Button datetimebtn = (Button) findViewById(R.id.CreateOrder_dateTimeButton);
+
         findViewById(R.id.CreateOrder_orderButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -140,18 +142,21 @@ public class CreateOrder extends AppCompatActivity {
         }
     }
 
-    public void openDatetime(View view, @Nullable Bundle savedInstanceState){
+    public void openDatetime(View view){
         //ke Datetime
-        Button datetimeButton = (Button) findViewById(R.id.CreateOrder_dateTimeButton);
-        datetimeButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v)
-            {
-//                Intent intent = new Intent(view.getContext(), DateTime.class);
-                Intent intent = new Intent(CreateOrder.this, DateTime.class);
-                startActivity(intent);
-            }
-        });
+        Intent intent = new Intent(CreateOrder.this, DateTime.class);
+        startActivity(intent);
+
+//        Button datetimeButton = (Button) findViewById(R.id.CreateOrder_dateTimeButton);
+//        datetimeButton.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View v)
+//            {
+////                Intent intent = new Intent(view.getContext(), DateTime.class);
+//                Intent intent = new Intent(CreateOrder.this, DateTime.class);
+//                startActivity(intent);
+//            }
+//        });
 
     }
 }
