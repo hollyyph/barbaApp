@@ -146,7 +146,7 @@ public class DateTime extends AppCompatActivity{
     public void setDatetime(View view) {
         Intent intent = new Intent(this, CreateOrder.class);
         intent.putExtras(this.prevIntent);
-        intent.putExtra(DATE_TIME, this.dtime);
+        intent.putExtra(DATE_TIME, datetime_string);
         startActivity(intent);
     }
 
