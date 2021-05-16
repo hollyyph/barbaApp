@@ -38,7 +38,7 @@ public class DateTime extends AppCompatActivity{
     private CalendarView calendar;
     private TimePicker time;
     private Calendar c;
-    private TextView datetime_show;
+//    private TextView datetime_show;
 
     private Intent prevIntent;
 
@@ -59,7 +59,7 @@ public class DateTime extends AppCompatActivity{
 
         c = Calendar.getInstance();
 
-        datetime_show = (TextView) findViewById(R.id.CreateOrder_dateTimeShow);
+//        datetime_show = (TextView) findViewById(R.id.CreateOrder_dateTimeShow);
 
         calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
@@ -74,8 +74,7 @@ public class DateTime extends AppCompatActivity{
                 showDateTime(year, month, day, hourOfDay, minute);
             }
         });
-//
-//
+
         year = c.get(Calendar.YEAR);
         month = c.get(Calendar.MONTH);
         day = c.get(Calendar.DAY_OF_MONTH);
@@ -98,15 +97,6 @@ public class DateTime extends AppCompatActivity{
 
     }
 
-//    private void getDateTimeCalendar(){
-//        Calendar calendar = Calendar.getInstance();
-//        day = calendar.get(Calendar.DAY_OF_MONTH);
-//        month = calendar.get(Calendar.MONTH);
-//        year = calendar.get(Calendar.YEAR);
-//        hour = calendar.get(Calendar.HOUR_OF_DAY);
-//        minute = calendar.get(Calendar.MINUTE);
-//
-//    }
 
     public void showDateTime(int year, int month, int day, int hour, int minute){
         String mname = "";
@@ -157,14 +147,19 @@ public class DateTime extends AppCompatActivity{
         this.hour = hour;
         this.minute = minute;
 
-        s = String.format("%d %s %d %d:%d", day, mname, year, hour, minute);
+        if (minute < 10){
+            s = String.format("%d %s %d %d:0%d", day, mname, year, hour, minute);
+        } else{
+            s = String.format("%d %s %d %d:%d", day, mname, year, hour, minute);
+        }
+
         datetime_text.setText(s);
     }
 
     public void setDatetime(View view) {
         Intent intent = new Intent(this, CreateOrder.class);
         intent.putExtras(this.prevIntent);
-        intent.putExtra(DATE_TIME, datetime_string);
+//        intent.putExtra(DATE_TIME, datetime_string);
         startActivity(intent);
     }
 
