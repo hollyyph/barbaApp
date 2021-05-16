@@ -49,6 +49,7 @@ public class DateTime extends AppCompatActivity{
         prevIntent = getIntent();
 
         calendar = (CalendarView) findViewById(R.id.datetime_calendar);
+        calendar.setDate(Calendar.getInstance().getTimeInMillis(),false,true);
 
         time = (TimePicker) findViewById(R.id.datetime_time);
         time.setIs24HourView(true);
@@ -60,13 +61,24 @@ public class DateTime extends AppCompatActivity{
 
         datetime_show = (TextView) findViewById(R.id.CreateOrder_dateTimeShow);
 
-        calendar.setOnDateChangeListener((calendar, i, i1, i2) -> {
-            day = i1+1;
-            month= i2;
-            year=i;
-
+        calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
+                showDateTime(year, month, dayOfMonth, hour, minute);
+            }
         });
 
+        time.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
+            @Override
+            public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {
+                showDateTime(year, month, day, hourOfDay, minute);
+            }
+        });
+//
+//
+        year = c.get(Calendar.YEAR);
+        month = c.get(Calendar.MONTH);
+        day = c.get(Calendar.DAY_OF_MONTH);
         hour = c.get(Calendar.HOUR_OF_DAY);
         minute = c.get(Calendar.MINUTE);
 
@@ -139,6 +151,12 @@ public class DateTime extends AppCompatActivity{
                 mname = "";
         }
         String s = "";
+        this.year = year;
+        this.month = month;
+        this.day = day;
+        this.hour = hour;
+        this.minute = minute;
+
         s = String.format("%d %s %d %d:%d", day, mname, year, hour, minute);
         datetime_text.setText(s);
     }
