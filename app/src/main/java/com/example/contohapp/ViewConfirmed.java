@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import java.util.HashMap;
@@ -31,6 +32,14 @@ public class ViewConfirmed extends AppCompatActivity {
 
         TextView notes = findViewById(R.id.ViewConfirmed_notes);
         notes.setText(intent.getStringExtra(ConfirmOrder.ORDER_NOTES));
+
+        findViewById(R.id.ViewConfirmed_chatButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), Chat.class);
+                view.getContext().startActivity(intent);
+            }
+        });
 
         String productsString = "";
         String pricesString = "";

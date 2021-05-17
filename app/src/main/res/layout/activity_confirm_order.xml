@@ -212,7 +212,7 @@
 
             <View
                 android:id="@+id/ConfirmOrder_divider1"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:alpha="0.5"
                 android:background="@color/light_grey"
@@ -223,19 +223,18 @@
 
             <View
                 android:id="@+id/ConfirmOrder_divider2"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginTop="32dp"
                 android:alpha="0.5"
                 android:background="@color/light_grey"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ConfirmOrder_totalPrice" />
 
             <View
                 android:id="@+id/ConfirmOrder_totalDivider"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="@color/black"
                 app:layout_constraintBottom_toTopOf="@+id/ConfirmOrder_totalPrice"

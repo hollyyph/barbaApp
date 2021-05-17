@@ -1,71 +1,57 @@
 package com.example.contohapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
 
 public class PaymentMethod extends AppCompatActivity {
     public static final String PAYMENT_METHOD = "com.example.contohapp.pmethod";
-    private TextView gopay;
-    private TextView ovo;
-    private TextView linkaja;
-    private TextView dana;
-    private TextView cash;
-    private String pmethod;
+
     private Intent prevIntent;
+
+    private RecyclerView recyclerView;
+
+    private String paymentMethod;
+
+    // untuk isi teks listitem di recyclerview payment method
+    private static final String[] paymentMethodNames = {"GoPay", "OVO", "LinkAja", "Dana", "Cash (OTS)"};
+
+    // untuk gambar setiap payment method di recyclerview
+    private static final int[] images = {
+            R.drawable.gopay_logo_cropped,
+            R.drawable.ovo_logo_cropped,
+            R.drawable.linkaja_logo,
+            R.drawable.dana_logo_cropped,
+            R.drawable.cash_logo
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment_method);
+
         prevIntent = getIntent();
 
-        gopay =  (TextView) findViewById(R.id.PaymentMethod_gopay);
-        ovo =  (TextView) findViewById(R.id.PaymentMethod_ovo);
-        linkaja =  (TextView) findViewById(R.id.PaymentMethod_linkaja);
-        dana =  (TextView) findViewById(R.id.PaymentMethod_dana);
-        cash =  (TextView) findViewById(R.id.PaymentMethod_cash);
-
-        gopay.setOnClickListener(new View.OnClickListener() {
+        recyclerView = findViewById(R.id.PaymentMethod_recyclerview);
+        PaymentMethodAdapter paymentMethodAdapter = new PaymentMethodAdapter(paymentMethodNames, images, new PaymentMethodAdapter.OnItemClickListener() {
             @Override
-            public void onClick(View v) {
-                pmethod = gopay.getText().toString();
+            public void onItemClick(String item) {
+                paymentMethod = item;
             }
         });
-        ovo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                pmethod = ovo.getText().toString();
-            }
-        });
-        linkaja.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                pmethod = linkaja.getText().toString();
-            }
-        });
-        dana.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                pmethod = dana.getText().toString();
-            }
-        });
-        cash.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                pmethod = cash.getText().toString();
-            }
-        });
+        recyclerView.setAdapter(paymentMethodAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
-    public void setPaymentMethod(View view) {
+
+    public void choosePaymentMethod(View view) {
         Intent intent = new Intent(this, ConfirmOrder.class);
-        intent.putExtras(this.prevIntent);
-        intent.putExtra(PAYMENT_METHOD, this.pmethod);
+        intent.putExtras(prevIntent);
+        intent.putExtra(PAYMENT_METHOD, paymentMethod);
         startActivity(intent);
     }
 }
