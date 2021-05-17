@@ -6,6 +6,7 @@
     android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/row_paymentmethod_cardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -18,7 +19,7 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/methodImage"
+                android:id="@+id/row_paymentmethod_methodImage"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginStart="64dp"
@@ -31,7 +32,7 @@
                 app:srcCompat="@drawable/gopay_logo_cropped" />
 
             <TextView
-                android:id="@+id/methodName"
+                android:id="@+id/row_paymentmethod_methodName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
@@ -41,11 +42,11 @@
                 android:textSize="18sp"
                 android:typeface="normal"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/methodImage"
+                app:layout_constraintStart_toEndOf="@+id/row_paymentmethod_methodImage"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <View
-                android:id="@+id/dividerTop"
+                android:id="@+id/row_paymentmethod_dividerTop"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:alpha="0.1"
@@ -53,7 +54,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <View
-                android:id="@+id/dividerBottom"
+                android:id="@+id/row_paymentmethod_dividerBottom"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:alpha="0.1"

@@ -10,8 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ContohApp"
         android:usesCleartextTraffic="true">
+        <activity android:name=".OrderActivity"></activity>
         <activity android:name=".Chat" />
-        <activity android:name=".DummyActivity" />
         <activity android:name=".CatalogChoose1" />
         <activity android:name=".CatalogChoose2" />
         <activity android:name=".DateTime" />
@@ -20,7 +20,6 @@
         <activity android:name=".ViewConfirmed" />
         <activity android:name=".PaymentMethod" />
         <activity android:name=".ConfirmOrder" />
-        <activity android:name=".OrderStub" />
         <activity
             android:name=".SplashScreen"
             android:label="@string/app_name"

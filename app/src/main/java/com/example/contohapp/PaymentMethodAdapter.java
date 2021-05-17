@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class PaymentMethodAdapter extends RecyclerView.Adapter<PaymentMethodAdapter.ViewHolder> {
@@ -27,11 +28,13 @@ public class PaymentMethodAdapter extends RecyclerView.Adapter<PaymentMethodAdap
     public static class ViewHolder extends RecyclerView.ViewHolder {
         private TextView paymentMethodTextView;
         private ImageView paymentMethodImageView;
+        private CardView cardView;
 
         public ViewHolder(View view) {
             super(view);
-            paymentMethodTextView = view.findViewById(R.id.methodName);
-            paymentMethodImageView = view.findViewById(R.id.methodImage);
+            paymentMethodTextView = view.findViewById(R.id.row_paymentmethod_methodName);
+            paymentMethodImageView = view.findViewById(R.id.row_paymentmethod_methodImage);
+            cardView = view.findViewById(R.id.row_paymentmethod_cardView);
         }
 
         public TextView getTextView() {
@@ -39,6 +42,9 @@ public class PaymentMethodAdapter extends RecyclerView.Adapter<PaymentMethodAdap
         }
         public ImageView getImageView() {
             return paymentMethodImageView;
+        }
+        public CardView getCardView() {
+            return cardView;
         }
     }
 
@@ -52,7 +58,7 @@ public class PaymentMethodAdapter extends RecyclerView.Adapter<PaymentMethodAdap
 
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, final int position) {
-        viewHolder.getTextView().setOnClickListener(new View.OnClickListener() {
+        viewHolder.getCardView().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 itemListener.onItemClick(paymentMethodNames[position]);
