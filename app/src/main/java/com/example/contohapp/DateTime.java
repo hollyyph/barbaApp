@@ -50,6 +50,7 @@ public class DateTime extends AppCompatActivity{
 
         calendar = (CalendarView) findViewById(R.id.datetime_calendar);
         calendar.setDate(Calendar.getInstance().getTimeInMillis(),false,true);
+        calendar.setMinDate(System.currentTimeMillis());
 
         time = (TimePicker) findViewById(R.id.datetime_time);
         time.setIs24HourView(true);
@@ -84,16 +85,18 @@ public class DateTime extends AppCompatActivity{
         //show ke layar
         showDateTime(year, month, day, hour, minute);
 
-//        Button setButton = (Button) findViewById(R.id.datetime_setbutton);
-//        setButton.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View v)
-//            {
-////                Intent intent = new Intent(view.getContext(), DateTime.class);
-//                Intent intent = new Intent(DateTime.this, CreateOrder.class);
-//                startActivity(intent);
-//            }
-//        });
+        Button setButton = (Button) findViewById(R.id.datetime_setbutton);
+        setButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v)
+            {
+//                Intent intent = new Intent(view.getContext(), DateTime.class);
+                Intent intent = new Intent(DateTime.this, CreateOrder.class);
+                intent.putExtras(prevIntent);
+                intent.putExtra(CreateOrder.DATE_TIME, datetime_string);
+                startActivity(intent);
+            }
+        });
 
     }
 
@@ -101,40 +104,40 @@ public class DateTime extends AppCompatActivity{
     public void showDateTime(int year, int month, int day, int hour, int minute){
         String mname = "";
         switch(month){
-            case 1:
+            case 0:
                 mname = "January";
                 break;
-            case 2:
+            case 1:
                 mname = "February";
                 break;
-            case 3:
+            case 2:
                 mname = "March";
                 break;
-            case 4:
+            case 3:
                 mname = "April";
                 break;
-            case 5:
+            case 4:
                 mname = "May";
                 break;
-            case 6:
+            case 5:
                 mname = "June";
                 break;
-            case 7:
+            case 6:
                 mname = "July";
                 break;
-            case 8:
+            case 7:
                 mname = "August";
                 break;
-            case 9:
+            case 8:
                 mname = "September";
                 break;
-            case 10:
+            case 9:
                 mname = "October";
                 break;
-            case 11:
+            case 10:
                 mname = "November";
                 break;
-            case 12:
+            case 11:
                 mname = "December";
                 break;
             default:
@@ -147,21 +150,29 @@ public class DateTime extends AppCompatActivity{
         this.hour = hour;
         this.minute = minute;
 
-        if (minute < 10){
-            s = String.format("%d %s %d %d:0%d", day, mname, year, hour, minute);
-        } else{
-            s = String.format("%d %s %d %d:%d", day, mname, year, hour, minute);
+        if (hour < 10){
+            if (minute < 10){
+                s = String.format("%d %s %d 0%d:0%d", day, mname, year, hour, minute);
+            } else{
+                s = String.format("%d %s %d 0%d:%d", day, mname, year, hour, minute);
+            }
+        } else {
+            if (minute < 10) {
+                s = String.format("%d %s %d %d:0%d", day, mname, year, hour, minute);
+            } else {
+                s = String.format("%d %s %d %d:%d", day, mname, year, hour, minute);
+            }
         }
-
         datetime_text.setText(s);
+        datetime_string = s;
     }
 
-    public void setDatetime(View view) {
-        Intent intent = new Intent(this, CreateOrder.class);
-        intent.putExtras(this.prevIntent);
-//        intent.putExtra(DATE_TIME, datetime_string);
-        startActivity(intent);
-    }
+//    public void setDatetime(View view) {
+//        Intent intent = new Intent(this, CreateOrder.class);
+//        intent.putExtras(this.prevIntent);
+////        intent.putExtra(DATE_TIME, datetime_string);
+//        startActivity(intent);
+//    }
 
 
 

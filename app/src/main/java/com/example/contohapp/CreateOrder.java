@@ -9,7 +9,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 
 import com.example.contohapp.DateTime;
@@ -22,6 +25,7 @@ public class CreateOrder extends AppCompatActivity {
     private HashMap<Integer, HashMap<String, Object>> productsInfo;
     private HashMap<Integer, Integer> productsCount;
     private ArrayList<TextView> productCountTextView;
+    private String datetime;
     private Intent prevIntent;
 
     private TextView datetimeShow;
@@ -30,6 +34,7 @@ public class CreateOrder extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_order);
+        prevIntent = getIntent();
 
         productsInfo = new HashMap<Integer, HashMap<String, Object>>();
         HashMap<String, Object> product1Info = new HashMap<String, Object>();
@@ -67,7 +72,10 @@ public class CreateOrder extends AppCompatActivity {
         }
 
         datetimeShow = findViewById(R.id.CreateOrder_dateTimeShow);
-        datetimeShow.setText("28 Maret 2021 23:23");
+        Calendar cal = Calendar.getInstance();
+        SimpleDateFormat sdf = new SimpleDateFormat("dd MMMM yyyy HH:mm");
+        datetime = sdf.format(cal.getTime());
+        datetimeShow.setText(datetime);
 
         prevIntent = getIntent();
         String message = prevIntent.getStringExtra(ReserveHome.SALON_NAME);
@@ -120,7 +128,9 @@ public class CreateOrder extends AppCompatActivity {
 
                 intent.putExtra(PRODUCT_INFO, newProductsInfo);
                 intent.putExtra(PRODUCT_COUNT, newProductsCount);
-                intent.putExtra(DATE_TIME, "22 March 2021 23:05");
+//                intent.putExtra(DATE_TIME, "22 March 2021 23:05");
+                intent.putExtra(DATE_TIME, datetime);
+
 
                 view.getContext().startActivity(intent);
             }
@@ -145,18 +155,9 @@ public class CreateOrder extends AppCompatActivity {
     public void openDatetime(View view){
         //ke Datetime
         Intent intent = new Intent(CreateOrder.this, DateTime.class);
+        intent.putExtras(prevIntent);
+        intent.putExtra(PRODUCT_COUNT, productsCount);
         startActivity(intent);
-
-//        Button datetimeButton = (Button) findViewById(R.id.CreateOrder_dateTimeButton);
-//        datetimeButton.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View v)
-//            {
-////                Intent intent = new Intent(view.getContext(), DateTime.class);
-//                Intent intent = new Intent(CreateOrder.this, DateTime.class);
-//                startActivity(intent);
-//            }
-//        });
 
     }
 }

@@ -9,7 +9,7 @@
     <TextView
         android:id="@+id/text_activity"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="120dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -17,8 +17,6 @@
         android:text="Your activity"
         android:textSize="25sp"
         android:textColor="@color/raisin_black"
-
-        app:layout_constraintEnd_toStartOf="@id/loop_layout"
 
         />
 
@@ -38,7 +36,13 @@
             android:orientation="vertical">
 
 <!--            put something here -->
-
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/Activity_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_activity" />
 
 
 

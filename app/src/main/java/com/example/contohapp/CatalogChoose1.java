@@ -13,7 +13,7 @@ public class CatalogChoose1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_catalog_choose1);
         TextView article = (TextView) findViewById(R.id.Catalog_Choose1_article);
-        article.setText("You heard it here first, the shag is here to stay. “They are still hanging about”, says KMS Guest Artist, Emily Olsson from shibui Melbourne. “But I think for the reason that they are so versatile, you can soften them out or go almost mullet-like depending on your desired look. “ Case and point? Rihanna just got a mullet.\n" +
+        article.setText("You heard it here first, the shag is here to stay. “They are still hanging about”, says KMS Guest Artist, Emily Olsson from shibui Melbourne. “But I think for the reason that they are so versatile, you can soften them out or go almost mullet-like depending on your desired look. “ Case and point? Rihanna just got a mullet. If you thought that sharp, structured edges were out, think again. According to Mark Thompson, Artistic and Events Manager at L’Oreal Profrssionnel, “strong, blunt cuts are comming back and will domminate 2021, in particular, pixie and short bobs will make a return.” \n" +
                 "Image: @coiffeurstory");
         TextView title = (TextView) findViewById(R.id.Catalog_Choose1_title);
         title.setText("Shags, shags, shags");
