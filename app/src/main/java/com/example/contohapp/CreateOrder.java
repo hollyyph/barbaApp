@@ -20,12 +20,13 @@ import com.example.contohapp.DateTime;
 public class CreateOrder extends AppCompatActivity {
     public static final String PRODUCT_INFO = "com.example.contohapp.pinfo";
     public static final String PRODUCT_COUNT = "com.example.contohapp.pcount";
-    public static final String DATE_TIME = "com.example.contohapp.dtime";
+    public static String DATE_TIME = "com.example.contohapp.dtime";
+
 
     private HashMap<Integer, HashMap<String, Object>> productsInfo;
     private HashMap<Integer, Integer> productsCount;
     private ArrayList<TextView> productCountTextView;
-    private String datetime;
+    private String datetimenow;
     private Intent prevIntent;
 
     private TextView datetimeShow;
@@ -35,6 +36,7 @@ public class CreateOrder extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_order);
         prevIntent = getIntent();
+
 
         productsInfo = new HashMap<Integer, HashMap<String, Object>>();
         HashMap<String, Object> product1Info = new HashMap<String, Object>();
@@ -57,7 +59,10 @@ public class CreateOrder extends AppCompatActivity {
         productsInfo.put((int) product2Info.get("id"), product2Info);
         productsInfo.put((int) product3Info.get("id"), product3Info);
 
+        //tambahin syarat bikin apakah ada previntent or nah
+
         productsCount = new HashMap<Integer, Integer>();
+
         productsCount.put((int) product1Info.get("id"), 0);
         productsCount.put((int) product2Info.get("id"), 0);
         productsCount.put((int) product3Info.get("id"), 0);
@@ -74,8 +79,13 @@ public class CreateOrder extends AppCompatActivity {
         datetimeShow = findViewById(R.id.CreateOrder_dateTimeShow);
         Calendar cal = Calendar.getInstance();
         SimpleDateFormat sdf = new SimpleDateFormat("dd MMMM yyyy HH:mm");
-        datetime = sdf.format(cal.getTime());
-        datetimeShow.setText(datetime);
+        datetimenow = sdf.format(cal.getTime());
+
+        if (DateTime.CHOSEN_DATETIME){
+            datetimeShow.setText(DATE_TIME);
+        } else {
+            datetimeShow.setText(datetimenow);
+        }
 
         prevIntent = getIntent();
         String message = prevIntent.getStringExtra(ReserveHome.SALON_NAME);
@@ -128,9 +138,7 @@ public class CreateOrder extends AppCompatActivity {
 
                 intent.putExtra(PRODUCT_INFO, newProductsInfo);
                 intent.putExtra(PRODUCT_COUNT, newProductsCount);
-//                intent.putExtra(DATE_TIME, "22 March 2021 23:05");
-                intent.putExtra(DATE_TIME, datetime);
-
+                intent.putExtra(DATE_TIME, datetimeShow.getText().toString());
 
                 view.getContext().startActivity(intent);
             }

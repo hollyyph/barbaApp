@@ -68,4 +68,10 @@ public class ViewConfirmed extends AppCompatActivity {
         products.setText(productsString);
         prices.setText(pricesString);
     }
+
+    public void backToHome(View view){
+        Intent intent = new Intent(this, MainActivity.class);
+//        intent.putExtra(CHOSEN_ID_ACTIVITY, idActivity);
+        startActivity(intent);
+    }
 }

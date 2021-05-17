@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -59,7 +61,7 @@ public class HomeFragment extends Fragment {
 
 
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        Button reserveButton = (Button) getView().findViewById(R.id.reserve_button);
+        ImageButton reserveButton = (ImageButton) getView().findViewById(R.id.reserve_button);
         reserveButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){

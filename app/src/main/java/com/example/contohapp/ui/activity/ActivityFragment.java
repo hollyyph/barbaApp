@@ -62,9 +62,11 @@ public class ActivityFragment extends Fragment {
         //import data orders dari database
         //code
         OrderModel o = ( new ViewModelProvider(this).get(OrderModel.class) ).loadOrders(1);
-        System.out.println("Ini apa "+ OrderModel);
+//        System.out.println("Ini apa "+ OrderModel);
+
 
         recyclerView = recyclerView.findViewById(R.id.Activity_recyclerview);
+
         ActivityAdapter activityAdapter = new ActivityAdapter(activityIds, activityNames, activityDates, activityStatuses, new ActivityAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(String item) {

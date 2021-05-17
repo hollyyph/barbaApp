@@ -64,15 +64,22 @@ public class ActivityAdapter extends RecyclerView.Adapter<ActivityAdapter.ViewHo
     // ini jg apa :(
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, final int position) {
+        String id = activityIds[position];
+        String name = activityNames[position];
+        String date = activityDates[position];
+//        String status = activityStatuses[position];
 
-        viewHolder.getTextView().setOnClickListener(new View.OnClickListener() {
+        viewHolder.getActivityTitleTextView().setText(name);
+        viewHolder.getActivityDateTextView().setText(date);
+
+        viewHolder.getActivityTitleTextView().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                itemListener.onItemClick(activityNames[position]);
+                itemListener.onItemClick(activityIds[position]);
             }
         });
 
-        viewHolder.getTextView().setText(activityNames[position]);
+//        viewHolder.getActivityDateTextView().setText(activityDates[position]);
 
     }
 

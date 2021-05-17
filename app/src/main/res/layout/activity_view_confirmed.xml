@@ -29,6 +29,7 @@
                 android:layout_marginBottom="48dp"
                 android:text="Back to Home"
                 android:textSize="10sp"
+                android:onClick="backToHome"
                 app:backgroundTint="@color/light_steel_blue"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/ViewConfirmed_chatButton"

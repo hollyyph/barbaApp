@@ -26,12 +26,6 @@ public class DateTime extends AppCompatActivity{
     protected Integer hour = 0;
     protected Integer minute = 0;
 
-    protected Integer savedDay = 0;
-    protected Integer savedMonth = 0;
-    protected Integer savedYear = 0;
-    protected Integer savedHour = 0;
-    protected Integer savedMinute = 0;
-
     private TextView datetime_text;
     private String datetime_string;
 
@@ -41,6 +35,8 @@ public class DateTime extends AppCompatActivity{
 //    private TextView datetime_show;
 
     private Intent prevIntent;
+
+    public static boolean CHOSEN_DATETIME = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -85,6 +81,7 @@ public class DateTime extends AppCompatActivity{
         //show ke layar
         showDateTime(year, month, day, hour, minute);
 
+        //set button
         Button setButton = (Button) findViewById(R.id.datetime_setbutton);
         setButton.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -92,6 +89,7 @@ public class DateTime extends AppCompatActivity{
             {
 //                Intent intent = new Intent(view.getContext(), DateTime.class);
                 Intent intent = new Intent(DateTime.this, CreateOrder.class);
+                CHOSEN_DATETIME = true;
                 intent.putExtras(prevIntent);
                 intent.putExtra(CreateOrder.DATE_TIME, datetime_string);
                 startActivity(intent);
@@ -165,6 +163,7 @@ public class DateTime extends AppCompatActivity{
         }
         datetime_text.setText(s);
         datetime_string = s;
+        CreateOrder.DATE_TIME = s;
     }
 
 //    public void setDatetime(View view) {
