@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -19,8 +20,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.contohapp.ActivityAdapter;
 import com.example.contohapp.OrderModel;
 import com.example.contohapp.R;
+import com.example.contohapp.ReserveHome;
 import com.example.contohapp.ViewConfirmed;
 
+import org.jetbrains.annotations.NotNull;
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
@@ -34,7 +37,7 @@ public class ActivityFragment extends Fragment {
     private RecyclerView recyclerView;
     private String idActivity;
     private ArrayList<OrderModel> arrOrder;
-    public static final String CHOSEN_ID_ACTIVITY = "com.example.contohapp.cidactivity";
+    public static String CHOSEN_ID_ACTIVITY = "com.example.contohapp.cidactivity";
 
     private static final String[] activityIds = new String[] {"1","2","3","4"};
     private static final String[] activityNames = new String[] {"John", "July", "June", "Jill"};
@@ -57,28 +60,35 @@ public class ActivityFragment extends Fragment {
 
         //import data orders dari database
         //code
+        OrderModel o = ( new ViewModelProvider(this).get(OrderModel.class) ).loadOrders(1);
 
         recyclerView = recyclerView.findViewById(R.id.Activity_recyclerview);
         ActivityAdapter activityAdapter = new ActivityAdapter(activityIds, activityNames, activityDates, activityStatuses, new ActivityAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(String item) {
-                idActivity = item;
+                idActivity =  item;
             }
         });
         recyclerView.setAdapter(activityAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
 //        l = (LinearLayout) root.findViewById(R.id.loop_layout);
 
-        // kasi code buat loop bikin layout > udh recycler view
-
         return root;
     }
+
+
+//    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+//
+//
+//
+//    }
 
     public void chooseActivity(View view){
         Intent intent = new Intent(getActivity(), ViewConfirmed.class);
         intent.putExtra(CHOSEN_ID_ACTIVITY, idActivity);
         startActivity(intent);
     }
+
 
 }

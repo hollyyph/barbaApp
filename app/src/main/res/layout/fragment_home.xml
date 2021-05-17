@@ -40,14 +40,14 @@
                     android:layout_marginLeft="40dp"
                     android:layout_weight="1"
                     android:fontFamily="@font/biryani"
-                    android:text="Hi User, \nhow are you doing today?" />
+                    android:text="Hi Luqman, \nhow are you doing today?" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
-                    <Button
+                    <ImageButton
                         android:id="@+id/reserve_button"
                         android:layout_width="150dp"
                         android:layout_height="150dp"
@@ -57,10 +57,9 @@
                         android:background="@drawable/reserve_button"
                         android:text="Reserve"
                         />
-                    <!--android:onClick="createReversePage"-->
-                    <!-- kasih action on click disini-->
+                  
 
-                    <Button
+                    <ImageButton
                         android:id="@+id/call_button"
                         android:layout_width="150dp"
                         android:layout_height="150dp"
@@ -100,52 +99,58 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
+                        android:layout_marginVertical="10dp"
                         android:orientation="horizontal">
 
-                        <Button
+                        <ImageButton
                             android:id="@+id/button6"
                             android:layout_width="300dp"
-                            android:layout_height="120dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/review1"
                             android:layout_marginLeft="50dp"
                             android:layout_weight="1"
-                            android:text="Review 1" />
+                             />
 
-                        <Button
+                        <ImageButton
                             android:id="@+id/button7"
                             android:layout_width="300dp"
-                            android:layout_height="120dp"
+                            android:layout_height="wrap_content"
                             android:layout_marginLeft="40dp"
                             android:layout_marginRight="50dp"
                             android:layout_weight="1"
-                            android:text="Review 2"
+                            android:background="@drawable/review2"
+
                             />
 
                     </LinearLayout>
                 </HorizontalScrollView>
 
-                <Button
+                <ImageButton
                     android:id="@+id/eventButton1"
                     android:layout_width="match_parent"
-                    android:layout_height="150dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:layout_marginHorizontal="40dp"
-                    android:background="@color/marigold"
+                    android:layout_marginVertical="10dp"
+                    android:background="@drawable/event1"
                     android:text="Event 1" />
 
-                <Button
+                <ImageButton
                     android:id="@+id/eventButton2"
                     android:layout_width="match_parent"
-                    android:layout_height="150dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginHorizontal="40dp"
-                    android:background="@color/cadet_blue"
+                    android:layout_marginVertical="10dp"
+                    android:background="@drawable/event2"
                     android:text="Event 2" />
 
-                <Button
+                <ImageButton
                     android:id="@+id/eventButton3"
                     android:layout_width="match_parent"
-                    android:layout_height="150dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginHorizontal="40dp"
-                    android:background="@color/chinese_violet"
+                    android:layout_marginVertical="10dp"
+                    android:background="@drawable/event3"
                     android:text="Event 3" />
 
             </LinearLayout>

@@ -54,7 +54,8 @@
                     android:id="@+id/row_activity_status"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
+                    android:text="Finished"
+                    android:textColor="@color/chinese_violet"
                     android:layout_gravity="center"
                     android:fontFamily="@font/biryani"
                     />

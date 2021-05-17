@@ -6,8 +6,6 @@ import com.example.contohapp.data.RetrofitClientInstance;
 import com.example.contohapp.data.Webservice;
 import com.example.contohapp.data.pojo.OrderBody;
 import com.example.contohapp.data.pojo.OrderResponse;
-import com.example.contohapp.data.pojo.ReviewBody;
-import com.example.contohapp.data.pojo.ReviewResponse;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -35,7 +33,7 @@ public class OrderModel extends ViewModel {
         return orders;
     }
 
-    public void loadOrders(int userId) {
+    public OrderModel loadOrders(int userId) {
         Call<ArrayList<OrderResponse>> call = apiInterface.getOrders(Integer.toString(userId));
         call.enqueue(new Callback<ArrayList<OrderResponse>>() {
 
@@ -69,6 +67,7 @@ public class OrderModel extends ViewModel {
                 call.cancel();
             }
         });
+        return null;
     }
 
     public void createSalonOrder(int id_pengguna,
