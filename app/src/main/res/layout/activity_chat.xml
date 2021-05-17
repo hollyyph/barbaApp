@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Chat">
+
+    <TextView
+        android:id="@+id/Chat_outgoing"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/outgoing_speech_bubble"
+        android:lineSpacingExtra="2dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="4dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="10dp"
+        android:text="Ok, sama-sama"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Chat_incoming"
+        app:layout_constraintWidth_max="wrap"
+        app:layout_constraintWidth_percent="0.8" />
+
+    <TextView
+        android:id="@+id/Chat_incoming"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/incoming_speech_bubble"
+        android:lineSpacingExtra="2dp"
+        android:paddingLeft="20dp"
+        android:paddingTop="4dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        android:text="Halo, Pelanggan! Terima kasih sudah memilih layanan kami. Hubungi kami apabila Anda memiliki pertanyaan!"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_max="wrap"
+        app:layout_constraintWidth_percent="0.8" />
+
+    <View
+        android:id="@+id/Chat_textViewBackground1"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:alpha="0.2"
+        android:background="@color/light_grey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/Chat_textViewBackground2"
+        android:layout_width="64dp"
+        android:layout_height="72dp"
+        android:background="@color/cadet_blue"
+        app:layout_constraintBottom_toBottomOf="@+id/Chat_textViewBackground1"
+        app:layout_constraintEnd_toEndOf="@+id/Chat_textViewBackground1" />
+
+    <ImageView
+        android:id="@+id/Chat_imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/Chat_textViewBackground1"
+        app:layout_constraintStart_toStartOf="@+id/Chat_textViewBackground2"
+        app:layout_constraintTop_toTopOf="@+id/Chat_textViewBackground2"
+        app:srcCompat="@drawable/send" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/_editText"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@null"
+        android:ems="10"
+        android:fontFamily="@font/biryani"
+        android:hint="Type a message..."
+        android:inputType="textPersonName"
+        android:textColor="@color/black"
+        android:typeface="normal"
+        app:boxBackgroundColor="@color/white"
+        app:hintTextColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/Chat_textViewBackground1"
+        app:layout_constraintEnd_toStartOf="@+id/Chat_textViewBackground2"
+        app:layout_constraintStart_toStartOf="@+id/Chat_textViewBackground1"
+        app:layout_constraintTop_toTopOf="@+id/Chat_textViewBackground1">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="@+id/Chat_textViewBackground1"
+            app:layout_constraintEnd_toStartOf="@+id/Chat_textViewBackground2"
+            app:layout_constraintStart_toStartOf="@+id/Chat_textViewBackground1"
+            app:layout_constraintTop_toTopOf="@+id/Chat_textViewBackground1" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
