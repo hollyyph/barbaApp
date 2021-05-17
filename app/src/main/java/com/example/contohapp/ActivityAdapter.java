@@ -64,6 +64,7 @@ public class ActivityAdapter extends RecyclerView.Adapter<ActivityAdapter.ViewHo
     // ini jg apa :(
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, final int position) {
+
         viewHolder.getTextView().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,13 +73,11 @@ public class ActivityAdapter extends RecyclerView.Adapter<ActivityAdapter.ViewHo
         });
 
         viewHolder.getTextView().setText(activityNames[position]);
-//        viewHolder.getImageView().setImageResource(paymentMethodImages[position]);
+
     }
 
-    // ini apa :(
     @Override
     public int getItemCount() {
-//        return paymentMethodNames.length;
         return activityIds.length;
     };
 }

@@ -57,7 +57,7 @@
                         android:background="@drawable/reserve_button"
                         android:text="Reserve"
                         />
-                  
+
 
                     <ImageButton
                         android:id="@+id/call_button"

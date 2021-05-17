@@ -39,6 +39,7 @@ public class ActivityFragment extends Fragment {
     private ArrayList<OrderModel> arrOrder;
     public static String CHOSEN_ID_ACTIVITY = "com.example.contohapp.cidactivity";
 
+    //ubah jadi masukin dr database
     private static final String[] activityIds = new String[] {"1","2","3","4"};
     private static final String[] activityNames = new String[] {"John", "July", "June", "Jill"};
     private static final String[] activityDates = new String[] {"23 Agustus 2020", "4 September 2020", "18 Desember 2020", "3 Maret 2021"};
@@ -61,6 +62,7 @@ public class ActivityFragment extends Fragment {
         //import data orders dari database
         //code
         OrderModel o = ( new ViewModelProvider(this).get(OrderModel.class) ).loadOrders(1);
+        System.out.println("Ini apa "+ OrderModel);
 
         recyclerView = recyclerView.findViewById(R.id.Activity_recyclerview);
         ActivityAdapter activityAdapter = new ActivityAdapter(activityIds, activityNames, activityDates, activityStatuses, new ActivityAdapter.OnItemClickListener() {
@@ -77,18 +79,13 @@ public class ActivityFragment extends Fragment {
         return root;
     }
 
-
-//    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-//
-//
-//
-//    }
-
     public void chooseActivity(View view){
         Intent intent = new Intent(getActivity(), ViewConfirmed.class);
         intent.putExtra(CHOSEN_ID_ACTIVITY, idActivity);
         startActivity(intent);
     }
+
+
 
 
 }
