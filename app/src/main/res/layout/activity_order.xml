@@ -21,23 +21,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="parent">
 
-            <Button
-                android:id="@+id/OrderActivity_homeButton"
-                android:layout_width="125dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="48dp"
-                android:layout_marginBottom="48dp"
-                android:text="Back"
-                android:textSize="10sp"
-                app:backgroundTint="@color/light_steel_blue"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/OrderActivity_paymentMethodValue"
-                app:layout_constraintVertical_bias="0.0"
-                tools:layout_conversion_absoluteHeight="48dp"
-                tools:layout_conversion_absoluteWidth="121dp" />
-
             <TextView
                 android:id="@+id/OrderActivity_notes"
                 android:layout_width="wrap_content"

@@ -44,15 +44,18 @@ public class CreateOrder extends AppCompatActivity {
         HashMap<String, Object> product3Info = new HashMap<String, Object>();
 
         product1Info.put("id", 1);
-        product1Info.put("nama", "L’Oreal Hair Treatment - 90 Minutes");
+//        product1Info.put("nama", "L’Oreal Hair Treatment - 90 Minutes");
+        product1Info.put("nama", "L’Oreal Hair Treatment");
         product1Info.put("harga", 30000);
 
         product2Info.put("id", 2);
-        product2Info.put("nama", "Ginseng Hair Treatment - 90 Minutes");
+//        product2Info.put("nama", "Ginseng Hair Treatment - 90 Minutes");
+        product2Info.put("nama", "Ginseng Hair Treatment");
         product2Info.put("harga", 80000);
 
         product3Info.put("id", 3);
-        product3Info.put("nama", "Hair and Foot Treatment - 60 Minutes");
+//        product3Info.put("nama", "Hair and Foot Treatment - 60 Minutes");
+        product3Info.put("nama", "Hair and Foot Treatment");
         product3Info.put("harga", 100000);
 
         productsInfo.put((int) product1Info.get("id"), product1Info);
@@ -60,12 +63,15 @@ public class CreateOrder extends AppCompatActivity {
         productsInfo.put((int) product3Info.get("id"), product3Info);
 
         //tambahin syarat bikin apakah ada previntent or nah
+        if (prevIntent.hasExtra(CreateOrder.PRODUCT_COUNT)) {
+            productsCount = (HashMap<Integer, Integer>) prevIntent.getSerializableExtra(CreateOrder.PRODUCT_COUNT);
+        } else {
+            productsCount = new HashMap<Integer, Integer>();
+            productsCount.put((int) product1Info.get("id"), 0);
+            productsCount.put((int) product2Info.get("id"), 0);
+            productsCount.put((int) product3Info.get("id"), 0);
+        }
 
-        productsCount = new HashMap<Integer, Integer>();
-
-        productsCount.put((int) product1Info.get("id"), 0);
-        productsCount.put((int) product2Info.get("id"), 0);
-        productsCount.put((int) product3Info.get("id"), 0);
 
         productCountTextView = new ArrayList<TextView>();
         productCountTextView.add(findViewById(R.id.CreateOrder_productCount1));
@@ -89,8 +95,8 @@ public class CreateOrder extends AppCompatActivity {
 
         prevIntent = getIntent();
         String message = prevIntent.getStringExtra(ReserveHome.SALON_NAME);
-        TextView sname = findViewById(R.id.CreateOrder_salonName);
-        sname.setText(message);
+//        TextView sname = findViewById(R.id.CreateOrder_salonName);
+//        sname.setText(message);
 
         ArrayList<Button> buttons = new ArrayList<Button>();
         int[] increaseButtonIds = {

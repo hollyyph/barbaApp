@@ -98,12 +98,12 @@ public class OrderActivity extends AppCompatActivity {
         TextView prices = findViewById(R.id.OrderActivity_prices);
         prices.setText(pricesString);
 
-        findViewById(R.id.OrderActivity_homeButton).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), MainActivity.class);
-                view.getContext().startActivity(intent);
-            }
-        });
+//        findViewById(R.id.OrderActivity_homeButton).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(view.getContext(), MainActivity.class);
+//                view.getContext().startActivity(intent);
+//            }
+//        });
     }
 }

@@ -150,45 +150,6 @@
                 app:layout_constraintTop_toBottomOf="@+id/CreateOrder_reviewTitle" />
 
             <TextView
-                android:id="@+id/CreateOrder_salonName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="240dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginRight="16dp"
-                android:fontFamily="@font/biryani"
-                android:gravity="right"
-                android:textColor="@color/white"
-                android:typeface="normal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/CreateOrder_catalogueTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="32dp"
-                android:fontFamily="@font/biryani"
-                android:text="Hairstyle Catalogue"
-                android:textColor="@color/black"
-                android:typeface="normal"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/CreateOrder_salonName" />
-
-            <TextView
-                android:id="@+id/CreateOrder_viewAllCat"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/biryani"
-                android:text="View All"
-                android:textColor="@color/claret"
-                android:typeface="normal"
-                app:layout_constraintBaseline_toBaselineOf="@+id/CreateOrder_catalogueTitle"
-                app:layout_constraintEnd_toEndOf="@+id/CreateOrder_salonName" />
-
-            <TextView
                 android:id="@+id/CreateOrder_reviewTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -204,12 +165,14 @@
                 android:id="@+id/CreateOrder_packageTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
                 android:layout_marginTop="32dp"
                 android:fontFamily="@font/biryani"
                 android:text="Package"
                 android:textColor="@color/black"
                 android:typeface="normal"
-                app:layout_constraintStart_toStartOf="@+id/CreateOrder_catalogueTitle"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/CreateOrder_divider1" />
 
             <TextView
@@ -240,11 +203,11 @@
                 android:id="@+id/CreateOrder_packageDesc1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginRight="16dp"
                 android:text="This treatment makes hair smoother, nourishes hair to the roots, and reduces hair loss"
-                android:textSize="8sp"
+                android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/CreateOrder_packagePrice1"
@@ -305,7 +268,7 @@
                 android:layout_marginTop="24dp"
                 android:fontFamily="@font/biryani"
                 android:text="Total Price"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:typeface="normal"
                 app:layout_constraintStart_toStartOf="@+id/CreateOrder_packagePrice3"
                 app:layout_constraintTop_toBottomOf="@+id/CreateOrder_packagePrice3" />
@@ -393,19 +356,19 @@
                 android:id="@+id/CreateOrder_divider1"
                 android:layout_width="0dp"
                 android:layout_height="1dp"
-                android:layout_marginTop="104dp"
+                android:layout_marginTop="8dp"
                 android:alpha="0.5"
                 android:background="@color/light_grey"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/CreateOrder_viewAllCat" />
+                app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
             <View
                 android:id="@+id/CreateOrder_divider2"
                 android:layout_width="0dp"
                 android:layout_height="1dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="16dp"
                 android:alpha="0.5"
                 android:background="@color/light_grey"
                 app:layout_constraintEnd_toEndOf="parent"
