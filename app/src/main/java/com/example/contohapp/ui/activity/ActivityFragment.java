@@ -107,6 +107,7 @@ public class ActivityFragment extends Fragment {
 
                 recyclerView.setAdapter(activityAdapter);
                 recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+                recyclerView.setNestedScrollingEnabled(false);
             }
         };
 

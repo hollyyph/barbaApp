@@ -1,11 +1,15 @@
 package com.example.contohapp;
 
 
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 
 import androidx.cardview.widget.CardView;
@@ -74,11 +78,29 @@ public class ActivityAdapter extends RecyclerView.Adapter<ActivityAdapter.ViewHo
                 }
             });
             viewHolder.getActivityTitleTextView().setText(activities.get(orderIds[position]).get("nama_salon").toString());
-            viewHolder.getActivityDateTextView().setText(activities.get(orderIds[position]).get("waktu").toString());
-            if (position == 0) {
+
+            String dt = activities.get(orderIds[position]).get("waktu").toString();
+
+            SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+            SimpleDateFormat sdf2 = new SimpleDateFormat("dd MMMM yyyy HH:mm");
+
+            Date convertdt = null;
+            try {
+                convertdt = sdf1.parse(dt);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+            String newdt = sdf2.format(convertdt);
+            viewHolder.getActivityDateTextView().setText(newdt);
+//            viewHolder.getActivityDateTextView().setText(activities.get(orderIds[position]).get("waktu").toString());
+
+            if (position == orderIds.length-1) {
                 viewHolder.getActivityStatusTextView().setText("Ongoing");
+                viewHolder.getActivityStatusTextView().setTextColor(Color.parseColor("#FF58A4B0"));
             } else {
-                viewHolder.getActivityStatusTextView().setText("");
+                viewHolder.getActivityStatusTextView().setText("Finished");
+                System.out.println(position);
+
             }
 
         };
