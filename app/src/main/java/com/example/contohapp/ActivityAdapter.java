@@ -80,7 +80,6 @@ public class ActivityAdapter extends RecyclerView.Adapter<ActivityAdapter.ViewHo
         });
 
 //        viewHolder.getActivityDateTextView().setText(activityDates[position]);
-
     }
 
     @Override
