@@ -33,7 +33,7 @@ public class OrderModel extends ViewModel {
         return orders;
     }
 
-    public OrderModel loadOrders(int userId) {
+    public void loadOrders(int userId) {
         Call<ArrayList<OrderResponse>> call = apiInterface.getOrders(Integer.toString(userId));
         call.enqueue(new Callback<ArrayList<OrderResponse>>() {
 
@@ -67,7 +67,6 @@ public class OrderModel extends ViewModel {
                 call.cancel();
             }
         });
-        return null;
     }
 
     public void createSalonOrder(int id_pengguna,

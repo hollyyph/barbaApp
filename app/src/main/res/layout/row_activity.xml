@@ -6,6 +6,7 @@
     android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/row_activity_cardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -63,7 +64,7 @@
             </LinearLayout>
 
             <View
-                android:id="@+id/dividerTop"
+                android:id="@+id/row_paymentmethod_dividerTop"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:alpha="0.1"
@@ -71,7 +72,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <View
-                android:id="@+id/dividerBottom"
+                android:id="@+id/row_paymentmethod_dividerBottom"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:alpha="0.1"

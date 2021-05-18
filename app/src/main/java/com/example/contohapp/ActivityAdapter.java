@@ -6,24 +6,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.HashMap;
+
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class ActivityAdapter extends RecyclerView.Adapter<ActivityAdapter.ViewHolder> {
     public interface OnItemClickListener {
-        void onItemClick(String item);
+        void onItemClick(int orderId);
     }
 
-    private String[] activityIds;
-    private String[] activityNames;
-    private String[] activityDates;
-    private String[] activityStatuses;
+    private HashMap<Integer, HashMap<String, Object>> activities;
     private OnItemClickListener itemListener;
 
-    public ActivityAdapter(String[] ids, String[] names, String[] dates, String[] statuses, OnItemClickListener listener) {
-        activityIds = ids;
-        activityNames = names;
-        activityDates = dates;
-        activityStatuses = statuses;
+    public ActivityAdapter(HashMap<Integer, HashMap<String, Object>> orders, OnItemClickListener listener) {
+        activities = orders;
         itemListener = listener;
     }
 
@@ -31,12 +28,14 @@ public class ActivityAdapter extends RecyclerView.Adapter<ActivityAdapter.ViewHo
         private TextView activityTitleTextView;
         private TextView activityDateTextView;
         private TextView activityStatusTextView;
+        private CardView cardView;
 
         public ViewHolder(View view) {
             super(view);
             activityTitleTextView = view.findViewById(R.id.row_activity_title);
             activityDateTextView = view.findViewById(R.id.row_activity_date);
             activityStatusTextView = view.findViewById(R.id.row_activity_status);
+            cardView = view.findViewById(R.id.row_activity_cardView);
         }
 
         public TextView getActivityTitleTextView() {
@@ -51,6 +50,9 @@ public class ActivityAdapter extends RecyclerView.Adapter<ActivityAdapter.ViewHo
             return activityStatusTextView;
         }
 
+        public CardView getCardView() {
+            return cardView;
+        }
     }
 
     @Override
@@ -61,29 +63,30 @@ public class ActivityAdapter extends RecyclerView.Adapter<ActivityAdapter.ViewHo
         return new ViewHolder(view);
     }
 
-    // ini jg apa :(
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, final int position) {
-        String id = activityIds[position];
-        String name = activityNames[position];
-        String date = activityDates[position];
-//        String status = activityStatuses[position];
-
-        viewHolder.getActivityTitleTextView().setText(name);
-        viewHolder.getActivityDateTextView().setText(date);
-
-        viewHolder.getActivityTitleTextView().setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                itemListener.onItemClick(activityIds[position]);
+        if (activities.size() > 0) {
+            Object[] orderIds = activities.keySet().toArray();
+            viewHolder.getCardView().setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    itemListener.onItemClick((int) activities.get(orderIds[position]).get("id_pesanan"));
+                }
+            });
+            viewHolder.getActivityTitleTextView().setText(activities.get(orderIds[position]).get("nama_salon").toString());
+            viewHolder.getActivityDateTextView().setText(activities.get(orderIds[position]).get("waktu").toString());
+            if (position == 0) {
+                viewHolder.getActivityStatusTextView().setText("Ongoing");
+            } else {
+                viewHolder.getActivityStatusTextView().setText("");
             }
-        });
 
-//        viewHolder.getActivityDateTextView().setText(activityDates[position]);
-    }
+        };
+
+        }
 
     @Override
     public int getItemCount() {
-        return activityIds.length;
-    };
+        return activities.size();
+    }
 }
